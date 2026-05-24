@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import Script from 'next/script';
 import { motion, Variants } from 'framer-motion';
 
 /* ── Animation variants ── */
@@ -61,42 +61,15 @@ const trustItems = [
 ];
 
 export default function BookACall() {
-  const calendlyRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const initWidget = () => {
-      if (calendlyRef.current && (window as any).Calendly) {
-        (window as any).Calendly.initInlineWidget({
-          url: 'https://calendly.com/medicisocial-info/15min',
-          parentElement: calendlyRef.current,
-          prefill: {},
-          utm: {},
-        });
-      }
-    };
-
-    // If already loaded (e.g. navigated back), init immediately
-    if ((window as any).Calendly) {
-      initWidget();
-      return;
-    }
-
-    // Otherwise inject and init on load
-    const script = document.createElement('script');
-    script.src = 'https://assets.calendly.com/assets/external/widget.js';
-    script.async = true;
-    script.onload = initWidget;
-    document.head.appendChild(script);
-
-    return () => {
-      if (document.head.contains(script)) {
-        document.head.removeChild(script);
-      }
-    };
-  }, []);
-
   return (
     <main className="bg-black text-white overflow-hidden min-h-screen">
+
+      {/* Calendly widget script — afterInteractive runs right after hydration */}
+      <Script
+        src="https://assets.calendly.com/assets/external/widget.js"
+        strategy="afterInteractive"
+      />
+
       <section className="pt-32 md:pt-44 pb-20 md:pb-32">
         <div className="max-w-screen-xl mx-auto px-5 md:px-8">
 
@@ -169,9 +142,10 @@ export default function BookACall() {
             <div className="h-1 w-full bg-gradient-to-r from-red-700 via-red-600 to-red-800" />
 
             <div className="p-4 md:p-6">
-              {/* ref gives useEffect the exact DOM node — no querySelector needed */}
+              {/* Calendly inline widget — data-url is how widget.js finds and initializes this div */}
               <div
-                ref={calendlyRef}
+                className="calendly-inline-widget"
+                data-url="https://calendly.com/medicisocial-info/15min"
                 style={{ minWidth: '320px', height: '700px' }}
               />
             </div>
