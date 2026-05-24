@@ -1,6 +1,5 @@
 'use client';
 
-import { useEffect } from 'react';
 import { motion, Variants } from 'framer-motion';
 
 /* ── Animation variants ── */
@@ -60,40 +59,7 @@ const trustItems = [
   },
 ];
 
-const CALENDLY_URL = 'https://calendly.com/medicisocial-info/15min';
-
 export default function BookACall() {
-  useEffect(() => {
-    // If script is already loaded, init the widget immediately
-    if ((window as any).Calendly) {
-      (window as any).Calendly.initInlineWidget({
-        url: CALENDLY_URL,
-        parentElement: document.querySelector('.calendly-inline-widget'),
-        prefill: {},
-        utm: {},
-      });
-      return;
-    }
-
-    // Otherwise, inject the script and init on load
-    const script = document.createElement('script');
-    script.src = 'https://assets.calendly.com/assets/external/widget.js';
-    script.async = true;
-    script.onload = () => {
-      (window as any).Calendly?.initInlineWidget({
-        url: CALENDLY_URL,
-        parentElement: document.querySelector('.calendly-inline-widget'),
-        prefill: {},
-        utm: {},
-      });
-    };
-    document.head.appendChild(script);
-
-    return () => {
-      // Clean up injected script on unmount
-      document.head.removeChild(script);
-    };
-  }, []);
 
   return (
     <main className="bg-black text-white overflow-hidden min-h-screen">
@@ -169,9 +135,13 @@ export default function BookACall() {
             <div className="h-1 w-full bg-gradient-to-r from-red-700 via-red-600 to-red-800" />
 
             <div className="p-4 md:p-6">
-              <div
-                className="calendly-inline-widget w-full"
-                style={{ minWidth: '320px', height: '700px' }}
+              <iframe
+                src="https://calendly.com/medicisocial-info/15min"
+                width="100%"
+                height="700"
+                frameBorder="0"
+                title="Schedule a call with Medici Social"
+                style={{ minWidth: '320px', border: 'none' }}
               />
             </div>
           </motion.div>
