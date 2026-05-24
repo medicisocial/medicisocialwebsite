@@ -101,7 +101,7 @@ const caseStudies = [
     desc: 'Driving user acquisition for an early-stage SaaS through educational and problem-driven short-form content.',
     stat1: { value: '176%', label: 'Increase in organic reach' },
     stat2: { value: '64%', label: 'Increase in sign-ups from social' },
-    img: '/images/ara-med-spa-web.jpg',
+    img: '/images/ara-med-spa.webp',
   },
 ];
 
