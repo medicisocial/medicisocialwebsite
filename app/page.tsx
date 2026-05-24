@@ -101,7 +101,7 @@ const caseStudies = [
     desc: 'Driving user acquisition for an early-stage SaaS through educational and problem-driven short-form content.',
     stat1: { value: '176%', label: 'Increase in organic reach' },
     stat2: { value: '64%', label: 'Increase in sign-ups from social' },
-    img: '/images/bestregards-space-45.webp',
+    img: '/images/ara-med-spa-web.jpg',
   },
 ];
 
@@ -197,8 +197,6 @@ export default function Home() {
                 </Link>
                 <Link
                   href="https://medicisocialwebsite.vercel.app/contact"
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="border border-zinc-800 text-white text-sm font-medium px-7 py-3.5 rounded-full hover:bg-zinc-900 hover:scale-[1.02] transition-all duration-300 text-center w-full md:w-auto md:min-w-[200px]"
                 >
                   Send an Inquiry
