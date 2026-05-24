@@ -88,7 +88,7 @@ const caseStudies = [
     img: '/images/plume.jpg',
   },
   {
-    name: 'Arco Fit Gym',
+    name: 'Acro Fit',
     type: 'Hospitality, Elevated',
     desc: 'Translating the on-premise experience of a premier Houston hospitality group into a social media presence that matches the quality of the dining room.',
     stat1: { value: '3.4x', label: 'Increase in average video views' },
@@ -96,7 +96,7 @@ const caseStudies = [
     img: '/images/arco-gym.webp',
   },
   {
-    name: 'Best Regards',
+    name: 'ARA Med Spa',
     type: 'SaaS Startup Acquisition',
     desc: 'Driving user acquisition for an early-stage SaaS through educational and problem-driven short-form content.',
     stat1: { value: '176%', label: 'Increase in organic reach' },
@@ -187,7 +187,7 @@ export default function Home() {
               {/* CTAs */}
               <motion.div variants={staggerItem} className="flex flex-col md:flex-row items-center justify-center md:justify-start gap-3 md:gap-4 mt-8 w-[280px] md:w-auto">
                 <Link
-                  href="/contact"
+                  href="/book-a-call"
                   className="inline-flex items-center justify-center gap-2 bg-red-700 text-white text-sm font-medium px-7 py-3.5 rounded-full hover:bg-red-600 hover:scale-[1.02] transition-all duration-300 w-full md:w-auto md:min-w-[200px]"
                 >
                   Book a Call
@@ -421,7 +421,7 @@ export default function Home() {
               >
                 <div className="grid grid-cols-1 md:grid-cols-2">
                   <div className="p-8 md:p-10 flex flex-col justify-center order-2 md:order-1">
-                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-1">{cs.name}.</h3>
+                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-1">{cs.name}</h3>
                     <span className="text-red-600 text-sm font-medium mb-4">{cs.type}.</span>
                     <p className="text-zinc-400 text-sm leading-relaxed mb-8">{cs.desc}</p>
                     <div className="grid grid-cols-2 gap-4">
@@ -586,7 +586,7 @@ export default function Home() {
                 Your brand deserves its story to be told.
               </p>
               <Link
-                href="/contact"
+                href="/book-a-call"
                 className="inline-flex items-center gap-2 bg-red-700 text-white text-sm font-medium px-8 py-4 rounded-full hover:bg-red-600 hover:scale-[1.02] transition-all duration-300"
               >
                 Book a Call →
