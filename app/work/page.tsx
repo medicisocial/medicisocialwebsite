@@ -42,7 +42,7 @@ const featuredProjects = [
     img: '/images/plume.jpg',
   },
   {
-    name: 'Arco Fit Gym',
+    name: 'Acro Fit',
     type: 'Hospitality, Elevated',
     desc: 'Translating the on-premise experience of a premier Houston hospitality group into a social media presence that matches the quality of the dining room.',
     stat1: { value: '3.4x', label: 'Increase in average video views' },
@@ -51,13 +51,13 @@ const featuredProjects = [
     img: '/images/arco-gym.webp',
   },
   {
-    name: 'Best Regards',
-    type: 'SaaS Startup Acquisition',
-    desc: 'Driving user acquisition for an early-stage SaaS through educational and problem-driven short-form content.',
+    name: 'ARA Med Spa',
+    type: 'Med Spa Growth',
+    desc: 'Growing ARA Med Spa\'s social presence through premium visual content and a platform strategy built around their clientele and brand identity.',
     stat1: { value: '176%', label: 'Increase in organic reach' },
-    stat2: { value: '64%', label: 'Increase in sign-ups from social' },
-    services: ['Content Strategy', 'Short-Form Video', 'SEO'],
-    img: '/images/bestregards-space-45.webp',
+    stat2: { value: '64%', label: 'Increase in bookings from social' },
+    services: ['Content Strategy', 'Short-Form Video', 'Social Media Marketing'],
+    img: '/images/angels.webp',
   },
 ];
 
@@ -109,7 +109,7 @@ export default function Work() {
                 {/* Project name overlay */}
                 <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10">
                   <h2 className="text-3xl md:text-5xl font-bold text-white drop-shadow-lg">
-                    {project.name}.
+                    {project.name}
                   </h2>
                 </div>
               </div>
@@ -176,11 +176,11 @@ export default function Work() {
           >
             {[
               { src: '/images/plume.jpg', alt: 'Plume hospitality brand content', aspect: 'aspect-[3/4]' },
-              { src: '/images/arco-gym.webp', alt: 'Arco Fit Gym branded content', aspect: 'aspect-[4/3]' },
-              { src: '/images/bestregards-space-45.webp', alt: 'Best Regards SaaS campaign', aspect: 'aspect-[3/4]' },
+              { src: '/images/arco-gym.webp', alt: 'Acro Fit branded content', aspect: 'aspect-[4/3]' },
+              { src: '/images/angels.webp', alt: 'ARA Med Spa campaign', aspect: 'aspect-[3/4]' },
               { src: '/images/plume.jpg', alt: 'Behind the scenes production', aspect: 'aspect-[4/5]' },
               { src: '/images/arco-gym.webp', alt: 'Content shoot setup', aspect: 'aspect-[3/4]' },
-              { src: '/images/bestregards-space-45.webp', alt: 'Social media campaign assets', aspect: 'aspect-[4/3]' },
+              { src: '/images/angels.webp', alt: 'ARA Med Spa social media assets', aspect: 'aspect-[4/3]' },
             ].map((item, i) => (
               <motion.div
                 key={i}
@@ -277,7 +277,7 @@ export default function Work() {
                 Let&apos;s talk about what we can build together.
               </p>
               <Link
-                href="/contact"
+                href="/book-a-call"
                 className="inline-flex items-center gap-2 bg-red-700 text-white text-sm font-medium px-8 py-4 rounded-full hover:bg-red-600 hover:scale-[1.02] transition-all duration-300"
               >
                 Book a Call →

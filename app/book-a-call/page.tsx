@@ -1,8 +1,7 @@
 'use client';
 
-import Script from 'next/script';
+import { useEffect } from 'react';
 import { motion, Variants } from 'framer-motion';
-import type { Metadata } from 'next';
 
 /* ── Animation variants ── */
 const heroEase = [0.16, 1, 0.3, 1] as const;
@@ -61,15 +60,43 @@ const trustItems = [
   },
 ];
 
+const CALENDLY_URL = 'https://calendly.com/medicisocial-info/15min';
+
 export default function BookACall() {
+  useEffect(() => {
+    // If script is already loaded, init the widget immediately
+    if ((window as any).Calendly) {
+      (window as any).Calendly.initInlineWidget({
+        url: CALENDLY_URL,
+        parentElement: document.querySelector('.calendly-inline-widget'),
+        prefill: {},
+        utm: {},
+      });
+      return;
+    }
+
+    // Otherwise, inject the script and init on load
+    const script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.async = true;
+    script.onload = () => {
+      (window as any).Calendly?.initInlineWidget({
+        url: CALENDLY_URL,
+        parentElement: document.querySelector('.calendly-inline-widget'),
+        prefill: {},
+        utm: {},
+      });
+    };
+    document.head.appendChild(script);
+
+    return () => {
+      // Clean up injected script on unmount
+      document.head.removeChild(script);
+    };
+  }, []);
+
   return (
     <main className="bg-black text-white overflow-hidden min-h-screen">
-      {/* Calendly script */}
-      <Script
-        src="https://assets.calendly.com/assets/external/widget.js"
-        strategy="lazyOnload"
-      />
-
       <section className="pt-32 md:pt-44 pb-20 md:pb-32">
         <div className="max-w-screen-xl mx-auto px-5 md:px-8">
 
@@ -144,7 +171,6 @@ export default function BookACall() {
             <div className="p-4 md:p-6">
               <div
                 className="calendly-inline-widget w-full"
-                data-url="https://calendly.com/medicisocial-info/15min"
                 style={{ minWidth: '320px', height: '700px' }}
               />
             </div>
