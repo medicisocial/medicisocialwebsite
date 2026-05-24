@@ -1,6 +1,6 @@
 'use client';
 
-import Script from 'next/script';
+
 import { motion, Variants } from 'framer-motion';
 
 /* ── Animation variants ── */
@@ -64,11 +64,7 @@ export default function BookACall() {
   return (
     <main className="bg-black text-white overflow-hidden min-h-screen">
 
-      {/* Calendly widget script — afterInteractive runs right after hydration */}
-      <Script
-        src="https://assets.calendly.com/assets/external/widget.js"
-        strategy="afterInteractive"
-      />
+
 
       <section className="pt-32 md:pt-44 pb-20 md:pb-32">
         <div className="max-w-screen-xl mx-auto px-5 md:px-8">
@@ -141,14 +137,15 @@ export default function BookACall() {
             {/* Thin red accent bar at top */}
             <div className="h-1 w-full bg-gradient-to-r from-red-700 via-red-600 to-red-800" />
 
-            <div className="p-4 md:p-6">
-              {/* Calendly inline widget — data-url is how widget.js finds and initializes this div */}
-              <div
-                className="calendly-inline-widget"
-                data-url="https://calendly.com/medicisocial-info/15min"
-                style={{ minWidth: '320px', height: '700px' }}
-              />
-            </div>
+            {/* Calendly iframe embed — always works regardless of script timing */}
+            <iframe
+              src="https://calendly.com/medicisocial-info/15min?embed_domain=medicisocial.com&embed_type=Inline&hide_gdpr_banner=1"
+              width="100%"
+              height="700"
+              frameBorder="0"
+              title="Schedule a call with Medici Social"
+              style={{ minWidth: '320px', display: 'block' }}
+            />
           </motion.div>
 
           {/* ── Footer note ── */}
