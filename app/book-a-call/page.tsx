@@ -2,7 +2,7 @@
 
 
 import { motion, Variants } from 'framer-motion';
-import Script from 'next/script';
+import { InlineWidget } from 'react-calendly';
 
 /* ── Animation variants ── */
 const heroEase = [0.16, 1, 0.3, 1] as const;
@@ -139,14 +139,9 @@ export default function BookACall() {
             <div className="h-1 w-full bg-gradient-to-r from-red-700 via-red-600 to-red-800" />
 
             {/* Calendly inline widget */}
-            <div 
-              className="calendly-inline-widget" 
-              data-url="https://calendly.com/medicisocial-info" 
-              style={{ minWidth: '320px', height: '700px' }}
-            />
-            <Script 
-              src="https://assets.calendly.com/assets/external/widget.js" 
-              strategy="lazyOnload" 
+            <InlineWidget 
+              url="https://calendly.com/medicisocial-info" 
+              styles={{ minWidth: '320px', height: '700px' }} 
             />
           </motion.div>
 
