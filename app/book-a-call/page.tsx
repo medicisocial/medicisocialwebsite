@@ -2,6 +2,7 @@
 
 
 import { motion, Variants } from 'framer-motion';
+import Script from 'next/script';
 
 /* ── Animation variants ── */
 const heroEase = [0.16, 1, 0.3, 1] as const;
@@ -137,14 +138,15 @@ export default function BookACall() {
             {/* Thin red accent bar at top */}
             <div className="h-1 w-full bg-gradient-to-r from-red-700 via-red-600 to-red-800" />
 
-            {/* Calendly iframe embed — always works regardless of script timing */}
-            <iframe
-              src="https://calendly.com/medicisocial-info/15min?embed_domain=medicisocial.com&embed_type=Inline&hide_gdpr_banner=1"
-              width="100%"
-              height="700"
-              frameBorder="0"
-              title="Schedule a call with Medici Social"
-              style={{ minWidth: '320px', display: 'block' }}
+            {/* Calendly inline widget */}
+            <div 
+              className="calendly-inline-widget" 
+              data-url="https://calendly.com/medicisocial-info" 
+              style={{ minWidth: '320px', height: '700px' }}
+            />
+            <Script 
+              src="https://assets.calendly.com/assets/external/widget.js" 
+              strategy="lazyOnload" 
             />
           </motion.div>
 
