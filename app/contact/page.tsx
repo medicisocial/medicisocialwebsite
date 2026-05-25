@@ -125,7 +125,7 @@ export default function Contact() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-zinc-400 text-sm hover:text-white transition-colors duration-200"
+                    className="text-zinc-400 text-sm hover:text-red-500 transition-colors duration-200"
                   >
                     {social.name}
                   </a>
@@ -221,7 +221,7 @@ export default function Contact() {
                           value={platform.toLowerCase()}
                           className="w-4 h-4 rounded border-zinc-700 bg-zinc-900 text-red-600 focus:ring-red-600/30 focus:ring-offset-0 focus:ring-1 cursor-pointer accent-red-600"
                         />
-                        <span className="text-sm text-zinc-400 group-hover:text-white transition-colors duration-200">{platform}</span>
+                        <span className="text-sm text-zinc-400 group-hover:text-red-500 transition-colors duration-200">{platform}</span>
                       </label>
                     ))}
                   </div>

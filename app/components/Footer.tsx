@@ -32,7 +32,7 @@ export default function Footer() {
                 { label: 'About', href: '/about' },
                 { label: 'Contact', href: '/contact' },
               ].map(link => (
-                <Link key={link.href} href={link.href} className="text-zinc-400 text-sm hover:text-white transition-colors hover-underline">
+                <Link key={link.href} href={link.href} className="text-zinc-400 text-sm hover:text-red-500 transition-colors hover-underline">
                   {link.label}
                 </Link>
               ))}
@@ -43,8 +43,8 @@ export default function Footer() {
           <div>
             <span className="text-zinc-500 text-xs uppercase tracking-wider block mb-4">Legal</span>
             <div className="flex flex-col gap-2.5">
-              <Link href="/privacy" className="text-zinc-400 text-sm hover:text-white transition-colors hover-underline">Privacy Policy</Link>
-              <Link href="/terms" className="text-zinc-400 text-sm hover:text-white transition-colors hover-underline">Terms & Conditions</Link>
+              <Link href="/privacy" className="text-zinc-400 text-sm hover:text-red-500 transition-colors hover-underline">Privacy Policy</Link>
+              <Link href="/terms" className="text-zinc-400 text-sm hover:text-red-500 transition-colors hover-underline">Terms & Conditions</Link>
             </div>
           </div>
         </div>
@@ -52,8 +52,8 @@ export default function Footer() {
         <div className="mt-12 pt-8 border-t border-zinc-800 flex flex-col md:flex-row items-center justify-between gap-4">
           <span className="text-zinc-500 text-xs">&copy; 2026 Medici Social. All rights reserved.</span>
           <div className="flex items-center gap-5">
-            <a href="https://www.instagram.com/medicisocial" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram page" className="text-zinc-400 text-xs hover:text-white transition-colors hover-underline">Instagram</a>
-            <a href="https://www.facebook.com/medicisocial" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page" className="text-zinc-400 text-xs hover:text-white transition-colors hover-underline">Facebook</a>
+            <a href="https://www.instagram.com/medicisocial" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram page" className="text-zinc-400 text-xs hover:text-red-500 transition-colors hover-underline">Instagram</a>
+            <a href="https://www.facebook.com/medicisocial" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page" className="text-zinc-400 text-xs hover:text-red-500 transition-colors hover-underline">Facebook</a>
 
           </div>
         </div>
