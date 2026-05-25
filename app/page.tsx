@@ -60,21 +60,25 @@ const services = [
     title: 'Social Media Marketing',
     desc: 'We manage your brand\'s social presence end-to-end: strategy, content, posting, engagement, and reporting. A deliberate system for growth.',
     items: ['Platform Strategy & Management', 'Content Calendaring & Scheduling', 'Community Engagement & Response', 'Monthly Analytics & Reporting'],
+    image: '/images/services/social_media.png',
   },
   {
     title: 'Content Creation',
     desc: 'Short-form video, photography, graphic design, and copywriting crafted to one editorial standard across every channel. Nothing leaves without intention behind it.',
     items: ['Short-form video production & editing', 'Brand photography & visual assets', 'Graphic design & copywriting', 'Brand guidelines & asset libraries'],
+    image: '/images/services/content_creation.png',
   },
   {
     title: 'Website Design & SEO',
     desc: 'Your website is the foundation. Your search presence is how people find it. We design, build, and optimize both. One team, no disconnect.',
     items: ['Custom website design & responsive development', 'Technical SEO audits & optimization', 'Local SEO & Google Business Profile', 'Keyword strategy & performance tracking'],
+    image: '/images/services/website_design.png',
   },
   {
     title: 'AI Integrations',
     desc: 'The advantage most agencies can\'t offer. We integrate AI tools into your workflows so your team operates faster without sacrificing quality.',
     items: ['AI-powered content workflows', 'Marketing automation & analytics', 'Chatbot & customer journey design', 'Custom AI tool implementation'],
+    image: '/images/services/ai_integrations.png',
   },
 ];
 
@@ -347,9 +351,16 @@ export default function Home() {
               >
                 <SpotlightCard className="bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden hover:border-red-900/40 transition-all duration-400 group cursor-default h-full flex flex-col relative">
                   {/* Red glow orb on hover */}
-                  <div className="absolute -top-20 -right-20 w-48 h-48 bg-red-600/0 group-hover:bg-red-600/[0.04] rounded-full transition-all duration-700 blur-3xl pointer-events-none" />
+                  <div className="absolute -top-20 -right-20 w-48 h-48 bg-red-600/0 group-hover:bg-red-600/[0.04] rounded-full transition-all duration-700 blur-3xl pointer-events-none z-10" />
+                  
+                  {/* Image full width */}
+                  <div className="relative w-full h-48 md:h-56 shrink-0 overflow-hidden border-b border-zinc-800">
+                    <Image src={svc.image} alt={svc.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-90" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/20 to-transparent" />
+                  </div>
+
                   {/* Top — content */}
-                  <div className="p-8 md:p-10 flex-1">
+                  <div className="p-8 md:p-10 pt-6 md:pt-8 flex-1 relative z-20">
                     <div className="flex items-center gap-4 mb-4">
                       <div className="w-11 h-11 rounded-xl bg-red-900/30 flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
                         {idx === 0 && (
