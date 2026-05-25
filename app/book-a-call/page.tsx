@@ -140,7 +140,7 @@ export default function BookACall() {
 
             {/* Calendly inline widget */}
             <InlineWidget 
-              url="https://calendly.com/medicisocial-info" 
+              url="https://calendly.com/medicisocial-info/15min" 
               styles={{ minWidth: '320px', height: '700px' }} 
             />
           </motion.div>
