@@ -85,8 +85,8 @@ const services = [
 const caseStudies = [
   {
     name: 'Plume',
-    type: 'Social-Led Brand Building',
-    desc: 'Building a distinctive social presence for Houston\'s Plume through short-form storytelling and a content strategy rooted in the brand\'s identity.',
+    type: 'High-End Cocktail Bar',
+    desc: 'Building a distinctive social presence for Houston\'s Plume, showcasing their curated small bites and exceptional cocktails through short-form storytelling.',
     stat1: { value: '295%', label: 'Increase in average watch time' },
     stat2: { value: '92%', label: 'Follower growth in 90 days' },
     img: '/images/plume.jpg',
