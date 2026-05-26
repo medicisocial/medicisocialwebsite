@@ -51,7 +51,7 @@ const values = [
 const team = [
   {
     name: 'Jordan Nguyen',
-    role: 'Head of Strategy',
+    role: 'Founder',
     desc: 'Translating brand DNA into scalable social architecture. Data-backed positioning for the modern era.',
     img: '/images/jordan.jpg',
   },
