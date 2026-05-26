@@ -263,7 +263,7 @@ export default function About() {
                   <img
                     src={t.img}
                     alt={t.name}
-                    className="w-full h-full object-cover transition-all duration-500 grayscale-[50%] brightness-75 group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
                 {/* Content */}
