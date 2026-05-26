@@ -314,7 +314,7 @@ export default function About() {
                 Let&apos;s build a social strategy that turns content into compounding growth.
               </p>
               <Link
-                href="/contact"
+                href="/book-a-call"
                 className="inline-flex items-center gap-2 bg-red-700 text-white text-sm font-medium px-8 py-4 rounded-full hover:bg-red-600 hover:scale-[1.02] transition-all duration-300"
               >
                 Book a Call

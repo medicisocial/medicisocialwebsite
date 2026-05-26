@@ -411,7 +411,7 @@ export default function Services() {
               </p>
               <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }} transition={{ duration: 0.2 }}>
                 <Link
-                  href="/contact"
+                  href="/book-a-call"
                   className="inline-flex items-center gap-2 bg-red-700 text-white text-sm font-medium px-8 py-4 rounded-full hover:bg-red-600 transition-colors duration-300"
                 >
                   Book a Call →
