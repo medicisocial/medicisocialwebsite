@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, Variants } from 'framer-motion';
 
 /* ── Animation variants (matching homepage) ── */
@@ -47,6 +48,7 @@ const services = [
         <path strokeLinecap="round" strokeLinejoin="round" d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25h-9A2.25 2.25 0 0 0 2.25 7.5v9a2.25 2.25 0 0 0 2.25 2.25Z" />
       </svg>
     ),
+    image: '/images/services/social_media.png',
   },
   {
     title: 'Content Creation',
@@ -64,6 +66,7 @@ const services = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
       </svg>
     ),
+    image: '/images/services/content_creation.png',
   },
   {
     title: 'Website Design & SEO',
@@ -81,6 +84,7 @@ const services = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M6.115 5.19l.319 1.913A6 6 0 008.11 10.36L9.75 12l-.387.775c-.217.433-.132.956.21 1.298l1.348 1.348c.21.21.329.497.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.723-.723a8.7 8.7 0 002.288-4.042 1.087 1.087 0 00-.358-1.099l-1.33-1.108c-.251-.21-.582-.299-.905-.245l-1.17.195a1.125 1.125 0 01-.98-.314l-.295-.295a1.125 1.125 0 010-1.591l.13-.132a1.125 1.125 0 011.3-.21l.603.302a.809.809 0 001.086-1.086L14.25 7.5l1.256-.837a4.5 4.5 0 001.528-1.732l.146-.292M6.115 5.19A9 9 0 1017.18 4.64M6.115 5.19A8.965 8.965 0 0112 3c1.929 0 3.716.607 5.18 1.64" />
       </svg>
     ),
+    image: '/images/services/website_design.png',
   },
   {
     title: 'AI Integrations',
@@ -98,6 +102,7 @@ const services = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h9a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0015.75 4.5h-9A2.25 2.25 0 004.5 6.75v10.5A2.25 2.25 0 006.75 19.5zM9 10.5a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm6 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
       </svg>
     ),
+    image: '/images/services/ai_integrations.png',
   },
 ];
 
@@ -162,12 +167,12 @@ export default function Services() {
               initial="hidden"
               whileInView="visible"
               viewport={viewportConfig}
-              className={`grid md:grid-cols-2 gap-12 md:gap-20 items-center ${idx % 2 === 1 ? 'md:[direction:rtl]' : ''}`}
+              className={`grid lg:grid-cols-2 gap-12 lg:gap-20 items-center ${idx % 2 === 1 ? 'lg:[direction:rtl]' : ''}`}
             >
               {/* Text side */}
               <motion.div
                 variants={staggerItem}
-                className={`text-center md:text-left ${idx % 2 === 1 ? 'md:[direction:ltr]' : ''}`}
+                className={`text-center md:text-left ${idx % 2 === 1 ? 'lg:[direction:ltr]' : ''}`}
               >
                 <motion.div
                   className="inline-flex items-center justify-center w-12 h-12 bg-red-900/20 rounded-xl border border-red-800/30 mb-6"
@@ -181,6 +186,37 @@ export default function Services() {
                 <p className="text-zinc-400 text-sm md:text-base leading-relaxed mb-8 max-w-lg mx-auto md:mx-0">
                   {svc.desc}
                 </p>
+
+                {/* Deliverables side */}
+                <motion.div
+                  variants={staggerContainer}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={viewportConfig}
+                  className="grid sm:grid-cols-2 gap-4 mb-8"
+                >
+                  {svc.details.map((detail, dIdx) => (
+                    <motion.div
+                      key={detail}
+                      variants={cardItem}
+                      whileHover={{
+                        x: 4,
+                        backgroundColor: 'rgba(127,29,29,0.08)',
+                        borderColor: 'rgba(185,28,28,0.4)',
+                        transition: { duration: 0.25 },
+                      }}
+                      className="flex items-center gap-3 bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3 cursor-default group"
+                    >
+                      <motion.span
+                        className="w-1.5 h-1.5 rounded-full bg-red-600 shrink-0"
+                        whileHover={{ scale: 1.8 }}
+                        transition={{ duration: 0.2 }}
+                      />
+                      <span className="text-xs text-zinc-300 group-hover:text-white transition-colors duration-300 leading-tight">{detail}</span>
+                    </motion.div>
+                  ))}
+                </motion.div>
+
                 <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }} transition={{ duration: 0.2 }}>
                   <Link
                     href="/contact"
@@ -191,46 +227,19 @@ export default function Services() {
                 </motion.div>
               </motion.div>
 
-              {/* Deliverables side */}
-              <div className={idx % 2 === 1 ? 'md:[direction:ltr]' : ''}>
-                <motion.div
-                  variants={staggerContainer}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={viewportConfig}
-                  className="grid gap-4"
-                >
-                  {svc.details.map((detail, dIdx) => (
-                    <motion.div
-                      key={detail}
-                      variants={cardItem}
-                      whileHover={{
-                        x: 8,
-                        backgroundColor: 'rgba(127,29,29,0.08)',
-                        borderColor: 'rgba(185,28,28,0.4)',
-                        transition: { duration: 0.25 },
-                      }}
-                      className="flex items-center gap-4 bg-zinc-900 border border-zinc-800 rounded-xl px-6 py-5 cursor-default group"
-                    >
-                      <motion.span
-                        className="w-2 h-2 rounded-full bg-red-600 shrink-0"
-                        whileHover={{ scale: 1.8 }}
-                        transition={{ duration: 0.2 }}
-                      />
-                      <span className="text-sm text-zinc-300 group-hover:text-white transition-colors duration-300">{detail}</span>
-                      <svg
-                        className="w-4 h-4 text-zinc-700 group-hover:text-red-500 ml-auto shrink-0 opacity-0 group-hover:opacity-100 transition-all duration-300 -translate-x-2 group-hover:translate-x-0"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        strokeWidth={2}
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                      </svg>
-                    </motion.div>
-                  ))}
-                </motion.div>
-              </div>
+              {/* Image Side */}
+              <motion.div
+                variants={cardItem}
+                className={`relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border border-white/5 ${idx % 2 === 1 ? 'lg:[direction:ltr]' : ''}`}
+              >
+                <Image
+                  src={svc.image}
+                  alt={svc.title}
+                  fill
+                  className="object-cover transition-transform duration-700 hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/40 to-transparent pointer-events-none" />
+              </motion.div>
             </motion.div>
           </div>
         </section>
