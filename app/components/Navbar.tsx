@@ -9,6 +9,7 @@ const navLinks = [
   { label: 'Services', href: '/services' },
   { label: 'Work', href: '/work' },
   { label: 'About', href: '/about' },
+  { label: 'Contact', href: '/contact' },
 ];
 
 export default function Navbar() {
@@ -95,11 +96,11 @@ export default function Navbar() {
               </div>
 
               <Link
-                href="/contact"
+                href="/book-a-call"
                 className="hidden md:inline-flex items-center gap-2 bg-red-700 text-white text-sm font-medium px-5 py-2.5 rounded-full hover:bg-red-600 hover:scale-[1.02] transition-all duration-300"
                 onClick={() => setIsOpen(false)}
               >
-                Contact
+                Book a Call
               </Link>
 
               {/* Mobile hamburger */}
@@ -159,11 +160,11 @@ export default function Navbar() {
                 </div>
 
                 <Link
-                  href="/contact"
+                  href="/book-a-call"
                   onClick={() => setIsOpen(false)}
                   className="bg-red-700 text-white text-center text-base font-medium px-8 py-4 rounded-full hover:bg-red-600 hover:scale-[1.02] transition-all duration-300 mt-6"
                 >
-                  Contact
+                  Book a Call
                 </Link>
               </motion.div>
             )}
