@@ -90,30 +90,7 @@ export default function Contact() {
               Connect with us to discuss your brands next move.
             </motion.p>
 
-            {/* Contact info cards */}
-            <motion.div variants={staggerItem} className="space-y-4">
-              {contactInfo.map((info) => {
-                const content = (
-                  <div className="flex items-center gap-4 bg-zinc-900 border border-zinc-800 rounded-xl p-4 hover:border-zinc-700 transition-colors duration-300">
-                    <div className="w-10 h-10 rounded-lg bg-red-900/20 flex items-center justify-center">
-                      {info.icon}
-                    </div>
-                    <div>
-                      <span className="text-zinc-500 text-xs uppercase tracking-wider block">{info.label}</span>
-                      <span className="text-white text-sm font-medium">{info.value}</span>
-                    </div>
-                  </div>
-                );
 
-                return info.href ? (
-                  <a key={info.label} href={info.href} className="block">
-                    {content}
-                  </a>
-                ) : (
-                  <div key={info.label}>{content}</div>
-                );
-              })}
-            </motion.div>
 
             {/* Social links */}
             <motion.div variants={staggerItem} className="mt-10 pt-8 border-t border-zinc-800">
