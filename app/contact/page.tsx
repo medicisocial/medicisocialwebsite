@@ -142,7 +142,7 @@ export default function Contact() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
                     <label htmlFor="contact-name" className="text-zinc-400 text-xs uppercase tracking-wider block mb-2">
-                      Name
+                      Name <span className="text-red-500">*</span>
                     </label>
                     <input
                       id="contact-name"
@@ -155,7 +155,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <label htmlFor="contact-email" className="text-zinc-400 text-xs uppercase tracking-wider block mb-2">
-                      Email
+                      Email <span className="text-red-500">*</span>
                     </label>
                     <input
                       id="contact-email"
@@ -205,7 +205,7 @@ export default function Contact() {
                 {/* Message */}
                 <div>
                   <label htmlFor="contact-message" className="text-zinc-400 text-xs uppercase tracking-wider block mb-2">
-                    Message
+                    Message <span className="text-red-500">*</span>
                   </label>
                   <textarea
                     id="contact-message"
@@ -233,9 +233,12 @@ export default function Contact() {
                 )}
                 
                 {state.errors && state.errors.getFormErrors().length > 0 && (
-                  <p className="text-red-500 text-sm text-center mt-4">
-                    Oops! There was a problem sending your message. Please try again.
-                  </p>
+                  <div className="text-red-500 text-sm text-center mt-4">
+                    <p>Oops! There was a problem sending your message. Please try again.</p>
+                    <pre className="text-xs mt-2 text-left bg-red-950/30 p-2 rounded">
+                      {JSON.stringify(state.errors, null, 2)}
+                    </pre>
+                  </div>
                 )}
 
                 <p className="text-zinc-600 text-xs text-center mt-4">
