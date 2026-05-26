@@ -223,7 +223,6 @@ export default function Home() {
                     defaultMuted={true}
                     playsInline={true}
                     preload="auto"
-                    poster="/images/hero-poster.webp"
                     className="w-full aspect-[9/16] object-cover pointer-events-none"
                   />
                 </div>
