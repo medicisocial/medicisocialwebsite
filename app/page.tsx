@@ -93,16 +93,16 @@ const caseStudies = [
   },
   {
     name: 'Arco Fit',
-    type: 'Hospitality, Elevated',
-    desc: 'Translating the on-premise experience of a premier Houston hospitality group into a social media presence that matches the quality of the dining room.',
+    type: 'Fitness, Elevated',
+    desc: 'Translating the high-energy environment of a premier gym and wellness center into a social media presence that drives membership and community engagement.',
     stat1: { value: '3.4x', label: 'Increase in average video views' },
     stat2: { value: '58%', label: 'Growth in social-driven sales' },
     img: '/images/arco-gym.webp',
   },
   {
     name: 'ARA Med Spa',
-    type: 'SaaS Startup Acquisition',
-    desc: 'Driving user acquisition for an early-stage SaaS through educational and problem-driven short-form content.',
+    type: 'Med Spa Growth',
+    desc: 'Growing ARA Med Spa\'s social presence through premium visual content and a platform strategy built around their clientele and brand identity.',
     stat1: { value: '176%', label: 'Increase in organic reach' },
     stat2: { value: '64%', label: 'Increase in sign-ups from social' },
     img: '/images/ara-med-spa.webp',
@@ -450,7 +450,7 @@ export default function Home() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.9, ease: [...scrollEase] as [number, number, number, number] }}
                   >
-                    <img src={cs.img} alt={cs.name} className="w-full h-full object-cover transition-all duration-500 grayscale-[50%] brightness-75 group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-105" />
+                    <img src={cs.img} alt={cs.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                   </motion.div>
                 </div>
               </motion.div>

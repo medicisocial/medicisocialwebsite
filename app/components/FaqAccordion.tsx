@@ -11,7 +11,7 @@ const faqs = [
   {
     question: 'What industries do you work with?',
     answer:
-      'Our client base is rooted in hospitality, food and beverage, luxury lifestyle, and premium consumer brands. We work best with businesses that care as much about how their brand looks and sounds as they do about performance.',
+      'We work with clients across all industries and sectors. While our capabilities span universally, we work best with businesses that care as much about how their brand looks and sounds as they do about performance.',
   },
   {
     question: 'What makes Medici Social different from other agencies?',

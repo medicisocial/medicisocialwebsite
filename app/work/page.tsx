@@ -43,8 +43,8 @@ const featuredProjects = [
   },
   {
     name: 'Arco Fit',
-    type: 'Hospitality, Elevated',
-    desc: 'Translating the on-premise experience of a premier Houston hospitality group into a social media presence that matches the quality of the dining room.',
+    type: 'Fitness, Elevated',
+    desc: 'Translating the high-energy environment of a premier gym and wellness center into a social media presence that drives membership and community engagement.',
     stat1: { value: '3.4x', label: 'Increase in average video views' },
     stat2: { value: '58%', label: 'Growth in social-driven sales' },
     services: ['Social Media Marketing', 'Content Creation', 'Website Design'],
