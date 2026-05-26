@@ -6,7 +6,7 @@ import { motion, AnimatePresence, Variants } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import FaqAccordion from './components/FaqAccordion';
 import PricingPlans from './components/PricingPlans';
-import TestimonialCarousel from './components/TestimonialCarousel';
+
 import SpotlightCard from './components/SpotlightCard';
 
 /* ── Animation variants ── */
@@ -92,7 +92,7 @@ const caseStudies = [
     img: '/images/plume.jpg',
   },
   {
-    name: 'Acro Fit',
+    name: 'Arco Fit',
     type: 'Hospitality, Elevated',
     desc: 'Translating the on-premise experience of a premier Houston hospitality group into a social media presence that matches the quality of the dining room.',
     stat1: { value: '3.4x', label: 'Increase in average video views' },
@@ -459,10 +459,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════
-          SECTION 5 — TESTIMONIAL QUOTE
-      ═══════════════════════════════════════════════════════════ */}
-      <TestimonialCarousel />
+
 
       {/* ═══════════════════════════════════════════════════════════
           SECTION 7 — WHY US (COMPARISON TABLE)

@@ -42,7 +42,7 @@ const featuredProjects = [
     img: '/images/plume.jpg',
   },
   {
-    name: 'Acro Fit',
+    name: 'Arco Fit',
     type: 'Hospitality, Elevated',
     desc: 'Translating the on-premise experience of a premier Houston hospitality group into a social media presence that matches the quality of the dining room.',
     stat1: { value: '3.4x', label: 'Increase in average video views' },
@@ -176,7 +176,7 @@ export default function Work() {
           >
             {[
               { src: '/images/plume.jpg', alt: 'Plume hospitality brand content', aspect: 'aspect-[3/4]' },
-              { src: '/images/arco-gym.webp', alt: 'Acro Fit branded content', aspect: 'aspect-[4/3]' },
+              { src: '/images/arco-gym.webp', alt: 'Arco Fit branded content', aspect: 'aspect-[4/3]' },
               { src: '/images/angels.webp', alt: 'ARA Med Spa campaign', aspect: 'aspect-[3/4]' },
               { src: '/images/plume.jpg', alt: 'Behind the scenes production', aspect: 'aspect-[4/5]' },
               { src: '/images/arco-gym.webp', alt: 'Content shoot setup', aspect: 'aspect-[3/4]' },
