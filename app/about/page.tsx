@@ -269,8 +269,7 @@ export default function About() {
                 {/* Content */}
                 <div className="p-8">
                   <h3 className="text-xl md:text-2xl font-semibold text-white mb-1">{t.name}</h3>
-                  <span className="text-red-600 text-xs font-medium uppercase tracking-wider block mb-3">{t.role}</span>
-                  <p className="text-zinc-400 text-sm leading-relaxed">{t.desc}</p>
+                  <span className="text-red-600 text-xs font-medium uppercase tracking-wider block">{t.role}</span>
                 </div>
               </motion.div>
             ))}
