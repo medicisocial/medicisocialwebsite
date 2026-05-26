@@ -63,7 +63,7 @@ const team = [
   },
   {
     name: 'Charles Snider',
-    role: 'Growth Lead',
+    role: 'Ai Integration Specialist',
     desc: 'Engineering algorithmic loops and optimizing for maximum ROI through relentless, data-driven iteration.',
     img: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=800&auto=format&fit=crop',
   },
