@@ -50,16 +50,16 @@ const values = [
 
 const team = [
   {
-    name: 'Alex Vance',
+    name: 'Jordan Nguyen',
     role: 'Head of Strategy',
     desc: 'Translating brand DNA into scalable social architecture. Data-backed positioning for the modern era.',
-    img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop',
+    img: '/images/jordan.jpg',
   },
   {
-    name: 'Sarah Jenkins',
+    name: 'Valerie Landeros',
     role: 'Creative Director',
     desc: 'Crafting scroll-stopping visual narratives that demand attention. No excess, no fluff.',
-    img: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=800&auto=format&fit=crop',
+    img: '/images/valerie.jpg',
   },
   {
     name: 'Marcus Thorne',
