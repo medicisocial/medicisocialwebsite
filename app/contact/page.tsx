@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import { motion, Variants } from 'framer-motion';
 
 /* ── Animation variants (from UI_UX_SPEC.md) ── */
@@ -51,6 +52,8 @@ const inputClasses =
   'w-full bg-zinc-900 border border-zinc-800 rounded-lg px-4 py-3.5 text-white text-sm placeholder:text-zinc-500 focus:outline-none focus:border-zinc-600 focus:ring-1 focus:ring-red-600/30 transition-colors duration-200';
 
 export default function Contact() {
+  const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+
   return (
     <main className="bg-black text-white overflow-hidden">
       <section className="pt-32 md:pt-44 pb-20 md:pb-28">
@@ -146,16 +149,36 @@ export default function Contact() {
               <p className="text-zinc-500 text-sm mb-8">Fill out the form below and we&apos;ll be in touch.</p>
 
               <form
-                onSubmit={(e) => {
+                onSubmit={async (e) => {
                   e.preventDefault();
+                  setFormStatus('submitting');
                   const form = e.currentTarget;
                   const honeypot = (form.elements.namedItem('website_url') as HTMLInputElement)?.value;
                   if (honeypot) {
                     // Bot detected — silently pretend success
                     form.reset();
+                    setFormStatus('success');
                     return;
                   }
-                  // Normal form submission logic here
+                  
+                  const formData = new FormData(form);
+                  try {
+                    const response = await fetch('https://formspree.io/f/xjgzapgg', {
+                      method: 'POST',
+                      body: formData,
+                      headers: {
+                        'Accept': 'application/json'
+                      }
+                    });
+                    if (response.ok) {
+                      setFormStatus('success');
+                      form.reset();
+                    } else {
+                      setFormStatus('error');
+                    }
+                  } catch (err) {
+                    setFormStatus('error');
+                  }
                 }}
                 className="space-y-5"
               >
@@ -176,8 +199,10 @@ export default function Contact() {
                     </label>
                     <input
                       id="contact-name"
+                      name="name"
                       type="text"
                       placeholder="Name"
+                      required
                       className={inputClasses}
                     />
                   </div>
@@ -187,8 +212,10 @@ export default function Contact() {
                     </label>
                     <input
                       id="contact-email"
+                      name="email"
                       type="email"
                       placeholder="Email"
+                      required
                       className={inputClasses}
                     />
                   </div>
@@ -201,6 +228,7 @@ export default function Contact() {
                   </label>
                   <input
                     id="contact-company"
+                    name="company"
                     type="text"
                     placeholder="Company Name"
                     className={inputClasses}
@@ -234,6 +262,8 @@ export default function Contact() {
                   </label>
                   <textarea
                     id="contact-message"
+                    name="message"
+                    required
                     rows={5}
                     placeholder="Tell us about your project, goals, and timeline..."
                     className={`${inputClasses} resize-none`}
@@ -243,10 +273,23 @@ export default function Contact() {
                 {/* Submit */}
                 <button
                   type="submit"
-                  className="w-full bg-red-700 text-white text-sm font-medium py-4 rounded-full hover:bg-red-600 hover:scale-[1.02] transition-all duration-300 mt-2"
+                  disabled={formStatus === 'submitting'}
+                  className="w-full flex justify-center items-center gap-2 bg-red-700 text-white text-sm font-medium py-4 rounded-full hover:bg-red-600 hover:scale-[1.02] disabled:opacity-50 disabled:hover:scale-100 transition-all duration-300 mt-2"
                 >
-                  Send Message
+                  {formStatus === 'submitting' ? 'Sending...' : 'Send Message'}
                 </button>
+
+                {formStatus === 'success' && (
+                  <p className="text-green-500 text-sm text-center mt-4">
+                    Message sent successfully! We'll be in touch soon.
+                  </p>
+                )}
+                
+                {formStatus === 'error' && (
+                  <p className="text-red-500 text-sm text-center mt-4">
+                    Oops! There was a problem sending your message. Please try again.
+                  </p>
+                )}
 
                 <p className="text-zinc-600 text-xs text-center mt-4">
                   By submitting, you agree to our Privacy Policy.
