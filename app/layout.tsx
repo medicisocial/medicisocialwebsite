@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.medicisocial.com'),
   title: {
     template: '%s | Medici Social',
-    default: 'Medici Social | Elite Short-Form Content Agency',
+    default: 'Medici Social | Social Media Marketing Agency',
   },
   description:
     'We are a collective of strategists, editors, and creators turning attention into measurable growth for modern brands. Based in Houston, TX.',
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     'viewport': 'width=device-width, initial-scale=1, viewport-fit=cover',
   },
   openGraph: {
-    title: 'Medici Social | Elite Short-Form Content Agency',
+    title: 'Medici Social | Social Media Marketing Agency',
     description:
       'We are a collective of strategists, editors, and creators turning attention into measurable growth for modern brands. Based in Houston, TX.',
     url: 'https://www.medicisocial.com',
@@ -59,13 +59,13 @@ export const metadata: Metadata = {
         url: '/images/og-image.webp',
         width: 1200,
         height: 630,
-        alt: 'Medici Social - Elite Short-Form Content Agency',
+        alt: 'Medici Social - Social Media Marketing Agency',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Medici Social | Elite Short-Form Content Agency',
+    title: 'Medici Social | Social Media Marketing Agency',
     description:
       'We are a collective of strategists, editors, and creators turning attention into measurable growth for modern brands.',
     images: ['/images/og-image.webp'],
