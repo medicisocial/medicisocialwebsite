@@ -96,6 +96,14 @@ export default function Navbar() {
               </div>
 
               <Link
+                href="https://portal.medicisocial.com"
+                className="hidden md:inline-flex items-center gap-2 text-white/80 border border-white/20 text-sm font-medium px-5 py-2.5 rounded-full hover:bg-white/10 hover:text-white transition-all duration-300"
+                onClick={() => setIsOpen(false)}
+              >
+                Client Portal
+              </Link>
+
+              <Link
                 href="/book-a-call"
                 className="hidden md:inline-flex items-center gap-2 bg-red-700 text-white text-sm font-medium px-5 py-2.5 rounded-full hover:bg-red-600 hover:scale-[1.02] transition-all duration-300"
                 onClick={() => setIsOpen(false)}
@@ -160,9 +168,17 @@ export default function Navbar() {
                 </div>
 
                 <Link
+                  href="https://portal.medicisocial.com"
+                  onClick={() => setIsOpen(false)}
+                  className="border border-white/20 text-white text-center text-base font-medium px-8 py-4 rounded-full hover:bg-white/10 transition-all duration-300 mt-6"
+                >
+                  Client Portal
+                </Link>
+
+                <Link
                   href="/book-a-call"
                   onClick={() => setIsOpen(false)}
-                  className="bg-red-700 text-white text-center text-base font-medium px-8 py-4 rounded-full hover:bg-red-600 hover:scale-[1.02] transition-all duration-300 mt-6"
+                  className="bg-red-700 text-white text-center text-base font-medium px-8 py-4 rounded-full hover:bg-red-600 hover:scale-[1.02] transition-all duration-300 mt-4"
                 >
                   Book a Call
                 </Link>
