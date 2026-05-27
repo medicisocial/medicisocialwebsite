@@ -168,19 +168,19 @@ export default function Navbar() {
                 </div>
 
                 <Link
-                  href="https://portal.medicisocial.com"
+                  href="/book-a-call"
                   onClick={() => setIsOpen(false)}
-                  className="border border-white/20 text-white text-center text-base font-medium px-8 py-4 rounded-full hover:bg-white/10 transition-all duration-300 mt-6"
+                  className="bg-red-700 text-white text-center text-base font-medium px-8 py-4 rounded-full hover:bg-red-600 hover:scale-[1.02] transition-all duration-300 mt-6"
                 >
-                  Client Portal
+                  Book a Call
                 </Link>
 
                 <Link
-                  href="/book-a-call"
+                  href="https://portal.medicisocial.com"
                   onClick={() => setIsOpen(false)}
-                  className="bg-red-700 text-white text-center text-base font-medium px-8 py-4 rounded-full hover:bg-red-600 hover:scale-[1.02] transition-all duration-300 mt-4"
+                  className="border border-white/20 text-white text-center text-base font-medium px-8 py-4 rounded-full hover:bg-white/10 transition-all duration-300 mt-4"
                 >
-                  Book a Call
+                  Client Portal
                 </Link>
               </motion.div>
             )}
