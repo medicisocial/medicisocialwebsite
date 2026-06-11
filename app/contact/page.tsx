@@ -145,6 +145,9 @@ export default function Contact() {
                     });
                     if (response.ok) {
                       setFormStatus('success');
+                      if (typeof window !== 'undefined' && (window as any).fbq) {
+                        (window as any).fbq('track', 'Lead');
+                      }
                       form.reset();
                     } else {
                       setFormStatus('error');
