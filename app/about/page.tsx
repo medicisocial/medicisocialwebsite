@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect } from 'react';
 import Link from 'next/link';
 import { motion, Variants } from 'framer-motion';
 
@@ -73,6 +74,15 @@ const team = [
 const heroWords = ['Built', 'for', 'the', 'modern', 'social', 'era.'];
 
 export default function About() {
+  useEffect(() => {
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('track', 'ViewContent', {
+        content_name: 'AboutUs',
+        content_category: 'About',
+      });
+    }
+  }, []);
+
   return (
     <main className="bg-black text-white overflow-hidden">
       {/* ═══════════════════════════════════════════════════════════

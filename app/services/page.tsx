@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, Variants } from 'framer-motion';
@@ -126,6 +127,15 @@ const process = [
 ];
 
 export default function Services() {
+  useEffect(() => {
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('track', 'ViewContent', {
+        content_name: 'Services',
+        content_category: 'Services',
+      });
+    }
+  }, []);
+
   return (
     <main className="bg-black text-white overflow-hidden">
 

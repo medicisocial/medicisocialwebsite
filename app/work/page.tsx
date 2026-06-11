@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, Variants } from 'framer-motion';
@@ -62,6 +63,15 @@ const featuredProjects = [
 ];
 
 export default function Work() {
+  useEffect(() => {
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('track', 'ViewContent', {
+        content_name: 'Portfolio',
+        content_category: 'Work',
+      });
+    }
+  }, []);
+
   return (
     <main className="bg-black text-white overflow-hidden">
 

@@ -200,7 +200,7 @@ export default function Home() {
                   </svg>
                 </Link>
                 <Link
-                  href="https://medicisocialwebsite.vercel.app/contact"
+                  href="/contact"
                   className="border border-zinc-800 text-white text-sm font-medium px-7 py-3.5 rounded-full hover:bg-zinc-900 hover:scale-[1.02] transition-all duration-300 text-center w-full md:w-auto md:min-w-[200px]"
                 >
                   Send an Inquiry
