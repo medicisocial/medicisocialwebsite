@@ -1,6 +1,6 @@
 'use client';
 
-
+import { useEffect } from 'react';
 import { motion, Variants } from 'framer-motion';
 import { InlineWidget } from 'react-calendly';
 
@@ -62,6 +62,25 @@ const trustItems = [
 ];
 
 export default function BookACall() {
+  useEffect(() => {
+    // 1. Track landing on booking page (Initiated Booking)
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('trackCustom', 'InitiateBooking');
+    }
+
+    // 2. Listen for Calendly event
+    const handleCalendlyEvent = (e: MessageEvent) => {
+      if (e.origin === 'https://calendly.com' && e.data.event === 'calendly.event_scheduled') {
+        if (typeof window !== 'undefined' && (window as any).fbq) {
+          (window as any).fbq('track', 'Schedule');
+        }
+      }
+    };
+
+    window.addEventListener('message', handleCalendlyEvent);
+    return () => window.removeEventListener('message', handleCalendlyEvent);
+  }, []);
+
   return (
     <main className="bg-black text-white overflow-hidden min-h-screen">
 
