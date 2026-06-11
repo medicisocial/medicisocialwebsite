@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, Variants } from 'framer-motion';
 
 /* ── Animation variants (from UI_UX_SPEC.md) ── */
@@ -53,6 +53,12 @@ const inputClasses =
 
 export default function Contact() {
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+
+  useEffect(() => {
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('track', 'Contact');
+    }
+  }, []);
 
   return (
     <main className="bg-black text-white overflow-hidden">
