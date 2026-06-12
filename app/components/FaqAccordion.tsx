@@ -46,33 +46,35 @@ export default function FaqAccordion() {
     <div className="flex flex-col gap-0">
       {faqs.map((faq, i) => (
         <div key={i} className="border-b border-white/10">
-          <button
-            onClick={() => toggle(i)}
-            aria-label={`${openIndex === i ? 'Collapse' : 'Expand'} ${faq.question}`}
-            aria-expanded={openIndex === i}
-            className="w-full flex items-center justify-between py-6 px-0 text-left hover:opacity-80 transition-opacity duration-150 group"
-          >
-            <span className="text-sm md:text-base text-white font-medium pr-8">
-              {faq.question}
-            </span>
-            <span
-              className={`w-8 h-8 rounded-full border border-white/20 flex items-center justify-center shrink-0 transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${
-                openIndex === i ? 'rotate-45 bg-crimson border-crimson' : ''
-              }`}
+          <h3 className="w-full">
+            <button
+              onClick={() => toggle(i)}
+              aria-label={`${openIndex === i ? 'Collapse' : 'Expand'} ${faq.question}`}
+              aria-expanded={openIndex === i}
+              className="w-full flex items-center justify-between py-6 px-0 text-left hover:opacity-80 transition-opacity duration-150 group"
             >
-              <svg
-                className={`w-3.5 h-3.5 transition-colors duration-500 ${
-                  openIndex === i ? 'text-white' : 'text-white/50'
+              <span className="text-sm md:text-base text-white font-medium pr-8">
+                {faq.question}
+              </span>
+              <span
+                className={`w-8 h-8 rounded-full border border-white/20 flex items-center justify-center shrink-0 transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${
+                  openIndex === i ? 'rotate-45 bg-crimson border-crimson' : ''
                 }`}
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                strokeWidth={2}
               >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
-              </svg>
-            </span>
-          </button>
+                <svg
+                  className={`w-3.5 h-3.5 transition-colors duration-500 ${
+                    openIndex === i ? 'text-white' : 'text-white/50'
+                  }`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  strokeWidth={2}
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+                </svg>
+              </span>
+            </button>
+          </h3>
           <div
             style={{
               maxHeight: openIndex === i ? '200px' : '0px',

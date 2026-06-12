@@ -269,13 +269,14 @@ export default function ServicesClient() {
             </motion.h2>
           </motion.div>
 
-          <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={viewportConfig} className="grid md:grid-cols-3 gap-6 md:gap-8">
+          <ol className="grid md:grid-cols-3 gap-6 md:gap-8">
             {processSteps.map((step) => (
-              <motion.div
+              <motion.li
                 key={step.step}
                 variants={cardItem}
                 whileHover={{ y: -8, transition: { duration: 0.3, ease: 'easeOut' } }}
                 className="relative bg-zinc-900 border border-zinc-800 rounded-xl p-8 md:p-10 cursor-default text-center md:text-left overflow-hidden group hover:border-zinc-700 transition-colors duration-300"
+                role="listitem"
               >
                 {/* Animated red accent bar at top */}
                 <div className="absolute top-0 left-0 h-[3px] bg-red-600 w-0 group-hover:w-full transition-all duration-500 ease-out" />
@@ -284,9 +285,9 @@ export default function ServicesClient() {
                 <span className="relative text-red-600 text-sm font-mono font-bold mb-6 block">{step.step}</span>
                 <h3 className="relative text-xl md:text-2xl font-semibold text-white mb-3 group-hover:text-white transition-colors">{step.title}</h3>
                 <p className="relative text-zinc-400 text-sm leading-relaxed group-hover:text-zinc-300 transition-colors duration-300">{step.desc}</p>
-              </motion.div>
+              </motion.li>
             ))}
-          </motion.div>
+          </ol>
         </div>
       </section>
 

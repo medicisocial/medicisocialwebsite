@@ -158,10 +158,18 @@ export default function AboutClient() {
             <blockquote className="text-3xl md:text-5xl font-medium text-white leading-snug">
               &ldquo;Social media isn&apos;t a megaphone. It&apos;s a conversation. We build brands that people actually want to listen to.&rdquo;
             </blockquote>
-            <div className="mt-10 flex items-center justify-center gap-3">
-              <div className="w-10 h-[1px] bg-red-600" />
-              <span className="text-zinc-400 text-sm">Medici Social Philosophy</span>
-              <div className="w-10 h-[1px] bg-red-600" />
+            <div className="mt-10 flex flex-col items-center justify-center gap-2">
+              <cite className="text-zinc-300 font-semibold text-lg not-italic">
+                Jordan Nguyen
+              </cite>
+              <span className="text-zinc-500 text-xs uppercase tracking-wider block">
+                Founder, Medici Social
+              </span>
+              <div className="flex items-center gap-3 mt-4">
+                <div className="w-10 h-[1px] bg-red-600" />
+                <span className="text-zinc-400 text-sm">Medici Social Philosophy</span>
+                <div className="w-10 h-[1px] bg-red-600" />
+              </div>
             </div>
           </motion.div>
         </div>
@@ -283,6 +291,7 @@ export default function AboutClient() {
                 <div className="p-8">
                   <h3 className="text-xl md:text-2xl font-semibold text-white mb-1">{t.name}</h3>
                   <span className="text-red-600 text-xs font-medium uppercase tracking-wider block">{t.role}</span>
+                  <p className="text-zinc-400 text-sm leading-relaxed mt-4 group-hover:text-zinc-300 transition-colors duration-300">{t.desc}</p>
                 </div>
               </motion.div>
             ))}
