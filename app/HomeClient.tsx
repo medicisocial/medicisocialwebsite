@@ -200,7 +200,7 @@ export default function HomeClient() {
                   href="/book-a-call"
                   className="inline-flex items-center justify-center gap-2 bg-red-700 text-white text-sm font-medium px-7 py-3.5 rounded-full hover:bg-red-600 hover:scale-[1.02] transition-all duration-300 w-full md:w-auto md:min-w-[200px]"
                 >
-                  Book a Call
+                  Book a Discovery Call
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
@@ -209,7 +209,7 @@ export default function HomeClient() {
                   href="/contact"
                   className="border border-zinc-800 text-white text-sm font-medium px-7 py-3.5 rounded-full hover:bg-zinc-900 hover:scale-[1.02] transition-all duration-300 text-center w-full md:w-auto md:min-w-[200px]"
                 >
-                  Send an Inquiry
+                  Send a Project Inquiry
                 </Link>
               </motion.div>
             </div>
@@ -348,62 +348,71 @@ export default function HomeClient() {
             whileInView="visible"
             viewport={viewportConfig}
           >
-            {services.map((svc, idx) => (
-              <motion.div
-                key={svc.title}
-                variants={cardItem}
-                whileHover={{ y: -8, transition: { duration: 0.3, ease: 'easeOut' } }}
-              >
-                <SpotlightCard className="bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden hover:border-red-900/40 transition-all duration-400 group cursor-default h-full flex flex-col relative">
-                  {/* Red glow orb on hover */}
-                  <div className="absolute -top-20 -right-20 w-48 h-48 bg-red-600/0 group-hover:bg-red-600/[0.04] rounded-full transition-all duration-700 blur-3xl pointer-events-none z-10" />
-                  
-                  {/* Image full width */}
-                  <div className="relative w-full h-48 md:h-56 shrink-0 overflow-hidden border-b border-zinc-800">
-                    <Image src={svc.image} alt={svc.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-90" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/20 to-transparent" />
-                  </div>
-
-                  {/* Top — content */}
-                  <div className="p-8 md:p-10 pt-6 md:pt-8 flex-1 relative z-20">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="w-11 h-11 rounded-xl bg-red-900/30 flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
-                        {idx === 0 && (
-                          <svg className="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.8}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25h-9A2.25 2.25 0 0 0 2.25 7.5v9a2.25 2.25 0 0 0 2.25 2.25Z" />
-                          </svg>
-                        )}
-                        {idx === 1 && (
-                          <svg className="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.8}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
-                          </svg>
-                        )}
-                        {idx === 2 && (
-                          <svg className="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.8}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" />
-                          </svg>
-                        )}
-                        {idx === 3 && (
-                          <svg className="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.8}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h9a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0015.75 4.5h-9A2.25 2.25 0 004.5 6.75v10.5A2.25 2.25 0 006.75 19.5zM9 10.5a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm6 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
-                          </svg>
-                        )}
+            {services.map((svc, idx) => {
+              const serviceSlug = svc.title.toLowerCase().replace(/ & /g, '-').replace(/\s+/g, '-');
+              return (
+                <motion.div
+                  key={svc.title}
+                  variants={cardItem}
+                  whileHover={{ y: -8, transition: { duration: 0.3, ease: 'easeOut' } }}
+                >
+                  <Link href={`/services#${serviceSlug}`} className="block h-full">
+                    <SpotlightCard className="bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden hover:border-red-900/40 transition-all duration-400 group cursor-pointer h-full flex flex-col relative">
+                      {/* Red glow orb on hover */}
+                      <div className="absolute -top-20 -right-20 w-48 h-48 bg-red-600/0 group-hover:bg-red-600/[0.04] rounded-full transition-all duration-700 blur-3xl pointer-events-none z-10" />
+                      
+                      {/* Image full width */}
+                      <div className="relative w-full h-48 md:h-56 shrink-0 overflow-hidden border-b border-zinc-800">
+                        <Image src={svc.image} alt={svc.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-90" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/20 to-transparent" />
                       </div>
-                      <h3 className="text-xl md:text-2xl font-semibold text-white group-hover:text-white transition-colors">{svc.title}</h3>
-                    </div>
-                    <p className="text-zinc-400 text-sm leading-relaxed group-hover:text-zinc-300 transition-colors duration-300">{svc.desc}</p>
-                  </div>
-                  {/* Bottom — scrolling tags */}
-                  <div className="relative py-4 md:py-5 border-t border-zinc-800 mt-auto px-5 md:px-8">
-                    <div className="flex flex-wrap gap-2">
-                      {svc.items.map((item, i) => (
-                        <span key={i} className="text-xs text-zinc-500 border border-zinc-700 rounded-full px-4 py-1.5 whitespace-nowrap">{item}</span>
-                      ))}
-                    </div>
-                  </div>
-                </SpotlightCard>
-              </motion.div>
-            ))}
+
+                      {/* Top — content */}
+                      <div className="p-8 md:p-10 pt-6 md:pt-8 flex-1 relative z-20">
+                        <div className="flex items-center gap-4 mb-4">
+                          <div className="w-11 h-11 rounded-xl bg-red-900/30 flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
+                            {idx === 0 && (
+                              <svg className="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.8}>
+                                <path strokeLinecap="round" strokeLinejoin="round" d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25h-9A2.25 2.25 0 0 0 2.25 7.5v9a2.25 2.25 0 0 0 2.25 2.25Z" />
+                              </svg>
+                            )}
+                            {idx === 1 && (
+                              <svg className="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.8}>
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                              </svg>
+                            )}
+                            {idx === 2 && (
+                              <svg className="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.8}>
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" />
+                              </svg>
+                            )}
+                            {idx === 3 && (
+                              <svg className="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.8}>
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h9a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0015.75 4.5h-9A2.25 2.25 0 004.5 6.75v10.5A2.25 2.25 0 006.75 19.5zM9 10.5a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm6 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                              </svg>
+                            )}
+                          </div>
+                          <h3 className="text-xl md:text-2xl font-semibold text-white group-hover:text-white transition-colors">{svc.title}</h3>
+                        </div>
+                        <p className="text-zinc-400 text-sm leading-relaxed group-hover:text-zinc-300 transition-colors duration-300">{svc.desc}</p>
+                      </div>
+
+                      {/* Bottom — scrolling tags */}
+                      <div className="relative py-4 md:py-5 border-t border-zinc-800 mt-auto px-5 md:px-8 flex items-center justify-between gap-4">
+                        <div className="flex flex-wrap gap-2">
+                          {svc.items.map((item, i) => (
+                            <span key={i} className="text-xs text-zinc-500 border border-zinc-700 rounded-full px-4 py-1.5 whitespace-nowrap">{item}</span>
+                          ))}
+                        </div>
+                        <span className="text-red-500 text-xs font-semibold shrink-0 group-hover:translate-x-1 transition-transform duration-200">
+                          Explore services →
+                        </span>
+                      </div>
+                    </SpotlightCard>
+                  </Link>
+                </motion.div>
+              );
+            })}
           </motion.div>
         </div>
       </section>
@@ -423,51 +432,60 @@ export default function HomeClient() {
           </motion.div>
 
           <div className="flex flex-col gap-8 md:gap-0">
-            {caseStudies.map((cs, idx) => (
-              <motion.div
-                key={cs.name}
-                variants={cardItem}
-                initial="hidden"
-                whileInView="visible"
-                viewport={viewportConfig}
-                className="bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden group hover:border-zinc-700 transition-colors duration-300 md:sticky md:mb-6"
-                style={{ top: `${100 + idx * 40}px`, zIndex: idx + 1 }}
-              >
-                <div className="grid grid-cols-1 md:grid-cols-2">
-                  <div className="p-8 md:p-10 flex flex-col justify-center order-2 md:order-1">
-                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-1">{cs.name}</h3>
-                    <span className="text-red-600 text-sm font-medium mb-4">{cs.type}.</span>
-                    <p className="text-zinc-400 text-sm leading-relaxed mb-8">{cs.desc}</p>
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="bg-black/30 border border-zinc-800 rounded-xl p-4">
-                        <span className="text-2xl md:text-3xl font-bold text-red-600">{cs.stat1.value}</span>
-                        <span className="block text-zinc-400 text-xs mt-1">{cs.stat1.label}</span>
+            {caseStudies.map((cs, idx) => {
+              const projectSlug = cs.name.toLowerCase().replace(/\s+/g, '-');
+              return (
+                <motion.div
+                  key={cs.name}
+                  variants={cardItem}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={viewportConfig}
+                  className="bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden group hover:border-zinc-700 transition-colors duration-300 md:sticky md:mb-6"
+                  style={{ top: `${100 + idx * 40}px`, zIndex: idx + 1 }}
+                >
+                  <Link href={`/work#${projectSlug}`} className="block">
+                    <div className="grid grid-cols-1 md:grid-cols-2 cursor-pointer">
+                      <div className="p-8 md:p-10 flex flex-col justify-center order-2 md:order-1">
+                        <h3 className="text-2xl md:text-3xl font-bold text-white mb-1">{cs.name}</h3>
+                        <span className="text-red-600 text-sm font-medium mb-4">{cs.type}.</span>
+                        <p className="text-zinc-400 text-sm leading-relaxed mb-6">{cs.desc}</p>
+                        <div className="grid grid-cols-2 gap-4">
+                          <div className="bg-black/30 border border-zinc-800 rounded-xl p-4">
+                            <span className="text-2xl md:text-3xl font-bold text-red-600">{cs.stat1.value}</span>
+                            <span className="block text-zinc-400 text-xs mt-1">{cs.stat1.label}</span>
+                          </div>
+                          <div className="bg-black/30 border border-zinc-800 rounded-xl p-4">
+                            <span className="text-2xl md:text-3xl font-bold text-red-600">{cs.stat2.value}</span>
+                            <span className="block text-zinc-400 text-xs mt-1">{cs.stat2.label}</span>
+                          </div>
+                        </div>
+                        <div className="mt-6 flex items-center gap-2 text-red-500 text-sm font-medium group-hover:text-red-400 transition-colors duration-200">
+                          View full case study
+                          <span className="group-hover:translate-x-1 transition-transform duration-200">→</span>
+                        </div>
                       </div>
-                      <div className="bg-black/30 border border-zinc-800 rounded-xl p-4">
-                        <span className="text-2xl md:text-3xl font-bold text-red-600">{cs.stat2.value}</span>
-                        <span className="block text-zinc-400 text-xs mt-1">{cs.stat2.label}</span>
-                      </div>
+                      <motion.div
+                        className="aspect-[4/3] md:aspect-auto overflow-hidden order-1 md:order-2"
+                        initial={{ clipPath: 'inset(100% 0% 0% 0%)' }}
+                        whileInView={{ clipPath: 'inset(0% 0% 0% 0%)' }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.9, ease: [...scrollEase] as [number, number, number, number] }}
+                      >
+                        <Image
+                          src={cs.img}
+                          alt={cs.name}
+                          width={cs.width}
+                          height={cs.height}
+                          className="w-full h-full md:h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                        />
+                      </motion.div>
                     </div>
-                  </div>
-                  <motion.div
-                    className="aspect-[4/3] md:aspect-auto overflow-hidden order-1 md:order-2"
-                    initial={{ clipPath: 'inset(100% 0% 0% 0%)' }}
-                    whileInView={{ clipPath: 'inset(0% 0% 0% 0%)' }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.9, ease: [...scrollEase] as [number, number, number, number] }}
-                  >
-                    <Image
-                      src={cs.img}
-                      alt={cs.name}
-                      width={cs.width}
-                      height={cs.height}
-                      className="w-full h-full md:h-auto object-cover transition-transform duration-500 group-hover:scale-105"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                    />
-                  </motion.div>
-                </div>
-              </motion.div>
-            ))}
+                  </Link>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -607,7 +625,7 @@ export default function HomeClient() {
                 href="/book-a-call"
                 className="inline-flex items-center gap-2 bg-red-700 text-white text-sm font-medium px-8 py-4 rounded-full hover:bg-red-600 hover:scale-[1.02] transition-all duration-300"
               >
-                Book a Call →
+                Book Your 15-Minute Consultation →
               </Link>
             </div>
           </motion.div>

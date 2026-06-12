@@ -98,7 +98,7 @@ export default function WorkClient() {
           FEATURED PROJECTS
       ═══════════════════════════════════════════════════════════ */}
       {featuredProjects.map((project, idx) => (
-        <section key={project.name} className={`py-16 md:py-24 ${idx % 2 === 1 ? 'bg-zinc-950' : ''}`}>
+        <section id={project.name.toLowerCase().replace(/\s+/g, '-')} key={project.name} className={`py-16 md:py-24 ${idx % 2 === 1 ? 'bg-zinc-950' : ''}`}>
           <div className="max-w-screen-xl mx-auto px-5 md:px-8">
             <motion.div
               variants={fadeUp}
@@ -290,7 +290,7 @@ export default function WorkClient() {
                 href="/book-a-call"
                 className="inline-flex items-center gap-2 bg-red-700 text-white text-sm font-medium px-8 py-4 rounded-full hover:bg-red-600 hover:scale-[1.02] transition-all duration-300"
               >
-                Book a Call →
+                Schedule Your Discovery Call →
               </Link>
             </div>
           </motion.div>

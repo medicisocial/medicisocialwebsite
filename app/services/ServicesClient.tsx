@@ -159,7 +159,7 @@ export default function ServicesClient() {
                 href="/contact"
                 className="inline-flex items-center gap-2 bg-red-700 text-white text-sm font-medium px-8 py-4 rounded-full hover:bg-red-600 hover:scale-[1.02] transition-all duration-300"
               >
-                Send an Inquiry →
+                Inquire About Our Services →
               </Link>
             </motion.div>
           </motion.div>
@@ -170,7 +170,7 @@ export default function ServicesClient() {
           SERVICES DETAIL
       ═══════════════════════════════════════════════════════════ */}
       {services.map((svc, idx) => (
-        <section key={svc.title} className={`py-20 md:py-28 ${idx % 2 === 1 ? 'bg-zinc-950' : ''}`}>
+        <section id={svc.title.toLowerCase().replace(/ & /g, '-').replace(/\s+/g, '-')} key={svc.title} className={`py-20 md:py-28 ${idx % 2 === 1 ? 'bg-zinc-950' : ''}`}>
           <div className="max-w-screen-xl mx-auto px-5 md:px-8">
             <motion.div
               variants={staggerContainer}
@@ -232,7 +232,7 @@ export default function ServicesClient() {
                     href="/contact"
                     className="inline-flex items-center gap-2 bg-red-700 text-white text-sm font-medium px-6 py-3 rounded-full hover:bg-red-600 transition-colors duration-300"
                   >
-                    Get Started →
+                    Get Started with {svc.title} →
                   </Link>
                 </motion.div>
               </motion.div>
