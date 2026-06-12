@@ -287,8 +287,9 @@ export default function WorkClient() {
                 Let&apos;s talk about what we can build together.
               </p>
               <Link
+                id="work-final-book-call"
                 href="/book-a-call"
-                className="inline-flex items-center gap-2 bg-red-700 text-white text-sm font-medium px-8 py-4 rounded-full hover:bg-red-600 hover:scale-[1.02] transition-all duration-300"
+                className="inline-flex items-center gap-2 bg-red-700 text-white text-sm font-medium px-8 py-4 rounded-full hover:bg-red-600 hover:scale-[1.02] transition-all duration-300 book-call-cta-click"
               >
                 Schedule Your Discovery Call →
               </Link>

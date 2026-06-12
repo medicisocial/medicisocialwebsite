@@ -22,10 +22,18 @@ export default function Footer() {
               A full-service marketing agency specializing in social media, web design, SEO, and AI integrations.
             </p>
             <div className="flex flex-row flex-wrap items-center gap-3 mt-2">
-              <Link href="/book-a-call" className="inline-flex items-center justify-center bg-red-700 text-white text-sm font-medium px-6 py-2.5 rounded-full hover:bg-red-600 transition-colors">
+              <Link
+                id="footer-book-call"
+                href="/book-a-call"
+                className="inline-flex items-center justify-center bg-red-700 text-white text-sm font-medium px-6 py-2.5 rounded-full hover:bg-red-600 transition-colors book-call-cta-click"
+              >
                 Book a Call
               </Link>
-              <Link href="/contact" className="inline-flex items-center justify-center border border-zinc-700 text-zinc-300 text-sm font-medium px-6 py-2.5 rounded-full hover:bg-zinc-800 hover:text-white transition-colors">
+              <Link
+                id="footer-send-inquiry"
+                href="/contact"
+                className="inline-flex items-center justify-center border border-zinc-700 text-zinc-300 text-sm font-medium px-6 py-2.5 rounded-full hover:bg-zinc-800 hover:text-white transition-colors contact-cta-click"
+              >
                 Send an Inquiry
               </Link>
             </div>

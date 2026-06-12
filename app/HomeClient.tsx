@@ -197,8 +197,9 @@ export default function HomeClient() {
               {/* CTAs */}
               <motion.div variants={staggerItem} className="flex flex-col md:flex-row items-center justify-center md:justify-start gap-3 md:gap-4 mt-8 w-[280px] md:w-auto">
                 <Link
+                  id="hero-primary-book-call"
                   href="/book-a-call"
-                  className="inline-flex items-center justify-center gap-2 bg-red-700 text-white text-sm font-medium px-7 py-3.5 rounded-full hover:bg-red-600 hover:scale-[1.02] transition-all duration-300 w-full md:w-auto md:min-w-[200px]"
+                  className="inline-flex items-center justify-center gap-2 bg-red-700 text-white text-sm font-medium px-7 py-3.5 rounded-full hover:bg-red-600 hover:scale-[1.02] transition-all duration-300 w-full md:w-auto md:min-w-[200px] book-call-cta-click"
                 >
                   Book a Discovery Call
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
@@ -206,8 +207,9 @@ export default function HomeClient() {
                   </svg>
                 </Link>
                 <Link
+                  id="hero-secondary-send-inquiry"
                   href="/contact"
-                  className="border border-zinc-800 text-white text-sm font-medium px-7 py-3.5 rounded-full hover:bg-zinc-900 hover:scale-[1.02] transition-all duration-300 text-center w-full md:w-auto md:min-w-[200px]"
+                  className="border border-zinc-800 text-white text-sm font-medium px-7 py-3.5 rounded-full hover:bg-zinc-900 hover:scale-[1.02] transition-all duration-300 text-center w-full md:w-auto md:min-w-[200px] contact-cta-click"
                 >
                   Send a Project Inquiry
                 </Link>
@@ -356,7 +358,11 @@ export default function HomeClient() {
                   variants={cardItem}
                   whileHover={{ y: -8, transition: { duration: 0.3, ease: 'easeOut' } }}
                 >
-                  <Link href={`/services#${serviceSlug}`} className="block h-full">
+                  <Link
+                    id={`service-card-${serviceSlug}`}
+                    href={`/services#${serviceSlug}`}
+                    className="block h-full service-card-click"
+                  >
                     <SpotlightCard className="bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden hover:border-red-900/40 transition-all duration-400 group cursor-pointer h-full flex flex-col relative">
                       {/* Red glow orb on hover */}
                       <div className="absolute -top-20 -right-20 w-48 h-48 bg-red-600/0 group-hover:bg-red-600/[0.04] rounded-full transition-all duration-700 blur-3xl pointer-events-none z-10" />
@@ -444,7 +450,11 @@ export default function HomeClient() {
                   className="bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden group hover:border-zinc-700 transition-colors duration-300 md:sticky md:mb-6"
                   style={{ top: `${100 + idx * 40}px`, zIndex: idx + 1 }}
                 >
-                  <Link href={`/work#${projectSlug}`} className="block">
+                  <Link
+                    id={`case-study-${projectSlug}`}
+                    href={`/work#${projectSlug}`}
+                    className="block case-study-card-click"
+                  >
                     <div className="grid grid-cols-1 md:grid-cols-2 cursor-pointer">
                       <div className="p-8 md:p-10 flex flex-col justify-center order-2 md:order-1">
                         <h3 className="text-2xl md:text-3xl font-bold text-white mb-1">{cs.name}</h3>
@@ -622,8 +632,9 @@ export default function HomeClient() {
                 Your brand deserves its story to be told.
               </p>
               <Link
+                id="home-final-book-call"
                 href="/book-a-call"
-                className="inline-flex items-center gap-2 bg-red-700 text-white text-sm font-medium px-8 py-4 rounded-full hover:bg-red-600 hover:scale-[1.02] transition-all duration-300"
+                className="inline-flex items-center gap-2 bg-red-700 text-white text-sm font-medium px-8 py-4 rounded-full hover:bg-red-600 hover:scale-[1.02] transition-all duration-300 book-call-cta-click"
               >
                 Book Your 15-Minute Consultation →
               </Link>

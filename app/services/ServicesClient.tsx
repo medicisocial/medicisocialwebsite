@@ -156,8 +156,9 @@ export default function ServicesClient() {
             </motion.p>
             <motion.div variants={staggerItem}>
               <Link
+                id="services-hero-inquire"
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-red-700 text-white text-sm font-medium px-8 py-4 rounded-full hover:bg-red-600 hover:scale-[1.02] transition-all duration-300"
+                className="inline-flex items-center gap-2 bg-red-700 text-white text-sm font-medium px-8 py-4 rounded-full hover:bg-red-600 hover:scale-[1.02] transition-all duration-300 contact-cta-click"
               >
                 Inquire About Our Services →
               </Link>
@@ -229,8 +230,9 @@ export default function ServicesClient() {
 
                 <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }} transition={{ duration: 0.2 }}>
                   <Link
+                    id={`services-get-started-${svc.title.toLowerCase().replace(/ & /g, '-').replace(/\s+/g, '-')}`}
                     href="/contact"
-                    className="inline-flex items-center gap-2 bg-red-700 text-white text-sm font-medium px-6 py-3 rounded-full hover:bg-red-600 transition-colors duration-300"
+                    className="inline-flex items-center gap-2 bg-red-700 text-white text-sm font-medium px-6 py-3 rounded-full hover:bg-red-600 transition-colors duration-300 contact-cta-click"
                   >
                     Get Started with {svc.title} →
                   </Link>

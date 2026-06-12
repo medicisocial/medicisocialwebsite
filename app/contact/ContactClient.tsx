@@ -90,13 +90,38 @@ export default function ContactClient() {
               {/* Subtitle */}
               <motion.p
                 variants={staggerItem}
-                className="text-zinc-400 text-lg leading-relaxed max-w-md mb-12"
+                className="text-zinc-400 text-lg leading-relaxed max-w-md mb-10"
               >
                 Connect with us to discuss your brands next move.
               </motion.p>
 
+              {/* Contact Info List */}
+              <motion.div variants={staggerItem} className="flex flex-col gap-6 mt-4 mb-12">
+                {contactInfo.map((info) => (
+                  <div key={info.label} className="flex items-center gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center shrink-0">
+                      {info.icon}
+                    </div>
+                    <div>
+                      <span className="text-zinc-500 text-xs uppercase tracking-wider block">{info.label}</span>
+                      {info.href ? (
+                        <a
+                          id="email-cta-contact"
+                          href={info.href}
+                          className="text-white hover:text-red-500 font-medium transition-colors duration-200 email-cta-click mailto-link"
+                        >
+                          {info.value}
+                        </a>
+                      ) : (
+                        <span className="text-white font-medium">{info.value}</span>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </motion.div>
+
               {/* Social links */}
-              <motion.div variants={staggerItem} className="mt-10 pt-8 border-t border-zinc-800">
+              <motion.div variants={staggerItem} className="pt-8 border-t border-zinc-800">
                 <span className="text-zinc-500 text-xs uppercase tracking-wider block mb-4">Follow us</span>
                 <div className="flex items-center gap-4">
                   {[
@@ -129,6 +154,7 @@ export default function ContactClient() {
                 <p className="text-zinc-500 text-sm mb-8">Fill out the form below and we&apos;ll be in touch.</p>
 
                 <form
+                  id="contact-form"
                   onSubmit={async (e) => {
                     e.preventDefault();
                     setFormStatus('submitting');
@@ -251,9 +277,10 @@ export default function ContactClient() {
 
                   {/* Submit */}
                   <button
+                    id="contact-form-submit-btn"
                     type="submit"
                     disabled={formStatus === 'submitting'}
-                    className="w-full flex justify-center items-center gap-2 bg-red-700 text-white text-sm font-medium py-4 rounded-full hover:bg-red-600 hover:scale-[1.02] disabled:opacity-50 disabled:hover:scale-100 transition-all duration-300 mt-2"
+                    className="w-full flex justify-center items-center gap-2 bg-red-700 text-white text-sm font-medium py-4 rounded-full hover:bg-red-600 hover:scale-[1.02] disabled:opacity-50 disabled:hover:scale-100 transition-all duration-300 mt-2 contact-submit-click"
                   >
                     {formStatus === 'submitting' ? 'Sending...' : 'Send Message'}
                   </button>

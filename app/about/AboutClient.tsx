@@ -336,8 +336,9 @@ export default function AboutClient() {
                 Let&apos;s build a social strategy that turns content into compounding growth.
               </p>
               <Link
+                id="about-final-book-call"
                 href="/book-a-call"
-                className="inline-flex items-center gap-2 bg-red-700 text-white text-sm font-medium px-8 py-4 rounded-full hover:bg-red-600 hover:scale-[1.02] transition-all duration-300"
+                className="inline-flex items-center gap-2 bg-red-700 text-white text-sm font-medium px-8 py-4 rounded-full hover:bg-red-600 hover:scale-[1.02] transition-all duration-300 book-call-cta-click"
               >
                 Schedule a Strategy Session
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
