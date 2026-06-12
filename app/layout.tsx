@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/images/og-image.webp',
+        url: 'https://www.medicisocial.com/images/og-image.webp',
         width: 1200,
         height: 630,
         alt: 'Medici Social - Social Media Marketing Agency',
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     title: 'Medici Social | Social Media Marketing Agency',
     description:
       'We are a collective of strategists, editors, and creators turning attention into measurable growth for modern brands.',
-    images: ['/images/og-image.webp'],
+    images: ['https://www.medicisocial.com/images/og-image.webp'],
   },
   robots: {
     index: true,
