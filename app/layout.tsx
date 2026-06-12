@@ -4,6 +4,7 @@ import "./globals.css";
 import SchemaOrg from './components/SchemaOrg'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import StickyBottomBar from './components/StickyBottomBar'
 import MotionProvider from './motion-provider'
 
 const inter = Inter({
@@ -141,6 +142,8 @@ export default function RootLayout({
           />
 
           <Footer />
+          <StickyBottomBar />
+          <div className="h-20 md:hidden" />
         </MotionProvider>
       </body>
     </html>

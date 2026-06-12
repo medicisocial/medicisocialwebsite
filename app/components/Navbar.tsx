@@ -58,7 +58,7 @@ export default function Navbar() {
             } ${isOpen ? 'bg-[#0a0a0a]' : ''}`}
           initial={false}
           animate={{
-            height: isOpen ? '100vh' : '72px',
+            height: isOpen ? '100dvh' : '72px',
           }}
           transition={{
             type: 'spring',
@@ -118,7 +118,7 @@ export default function Navbar() {
               {/* Mobile hamburger */}
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="md:hidden w-9 h-9 flex flex-col items-center justify-center gap-1.5"
+                className="md:hidden w-12 h-12 flex flex-col items-center justify-center gap-1.5 touch-manipulation"
                 aria-label={isOpen ? 'Close menu' : 'Open menu'}
               >
                 <motion.span
@@ -150,7 +150,7 @@ export default function Navbar() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 20 }}
                 transition={{ delay: 0.1, duration: 0.4 }}
-                className="flex flex-col px-5 pt-8 pb-12 h-[calc(100vh-72px)]"
+                className="flex flex-col px-5 pt-8 pb-12 h-[calc(100dvh-72px)]"
               >
                 <div className="flex flex-col gap-1">
                   {navLinks.map((link, i) => (
@@ -163,7 +163,7 @@ export default function Navbar() {
                       <Link
                         href={link.href}
                         onClick={() => setIsOpen(false)}
-                        className="block text-3xl font-semibold text-white py-4 border-b border-white/10 hover:text-crimson transition-colors"
+                        className="block text-3xl font-semibold text-white py-4 border-b border-white/10 hover:text-crimson transition-colors touch-manipulation"
                       >
                         {link.label}
                       </Link>
@@ -175,7 +175,7 @@ export default function Navbar() {
                   id="mobile-nav-book-call"
                   href="/book-a-call"
                   onClick={() => setIsOpen(false)}
-                  className="bg-red-700 text-white text-center text-base font-medium px-8 py-4 rounded-full hover:bg-red-600 hover:scale-[1.02] transition-all duration-300 mt-6 book-call-cta-click"
+                  className="bg-red-700 text-white text-center text-base font-medium px-8 py-4 rounded-full hover:bg-red-600 hover:scale-[1.02] transition-all duration-300 mt-6 book-call-cta-click touch-manipulation"
                 >
                   Book a Call
                 </Link>
@@ -184,7 +184,7 @@ export default function Navbar() {
                   id="mobile-nav-client-portal"
                   href="https://portal.medicisocial.com"
                   onClick={() => setIsOpen(false)}
-                  className="border border-white/20 text-white text-center text-base font-medium px-8 py-4 rounded-full hover:bg-white/10 transition-all duration-300 mt-4 portal-click"
+                  className="border border-white/20 text-white text-center text-base font-medium px-8 py-4 rounded-full hover:bg-white/10 transition-all duration-300 mt-4 portal-click touch-manipulation"
                 >
                   Client Portal
                 </Link>

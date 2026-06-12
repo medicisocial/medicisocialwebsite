@@ -84,7 +84,7 @@ export default function NotFound() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </div>
-              <span className="text-zinc-500 text-xs leading-normal">
+              <span className="text-zinc-400 text-xs leading-normal">
                 {item.desc}
               </span>
             </Link>

@@ -82,7 +82,7 @@ export default function BookACallClient() {
   }, []);
 
   return (
-    <main className="bg-black text-white overflow-hidden min-h-screen">
+    <main className="bg-black text-white overflow-hidden min-h-dvh">
 
       <section className="pt-32 md:pt-44 pb-20 md:pb-32">
         <div className="max-w-screen-xl mx-auto px-5 md:px-8">
@@ -168,7 +168,7 @@ export default function BookACallClient() {
             initial="hidden"
             animate="visible"
             transition={{ delay: 0.5 }}
-            className="text-center text-zinc-600 text-sm mt-8"
+            className="text-center text-zinc-400 text-sm mt-8"
           >
             Prefer to reach out directly?{' '}
             <a
@@ -178,7 +178,7 @@ export default function BookACallClient() {
                 e.preventDefault();
                 window.location.href = 'mailto:' + 'info' + '@' + 'medicisocial.com';
               }}
-              className="text-zinc-400 hover:text-red-500 transition-colors duration-200 underline underline-offset-4 email-cta-click mailto-link"
+              className="text-zinc-400 hover:text-red-500 transition-colors duration-200 underline underline-offset-4 email-cta-click mailto-link touch-manipulation"
             >
               info&#64;medicisocial.com
             </a>

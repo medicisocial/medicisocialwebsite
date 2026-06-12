@@ -39,7 +39,7 @@ const contactInfo = [
 
 /* ── Form field config ── */
 const inputClasses =
-  'w-full bg-zinc-900 border border-zinc-800 rounded-lg px-4 py-3.5 text-white text-sm placeholder:text-zinc-500 focus:outline-none focus:border-zinc-600 focus:ring-1 focus:ring-red-600/30 transition-colors duration-200';
+  'w-full bg-zinc-900 border border-zinc-800 rounded-lg px-4 py-3.5 text-white text-base placeholder:text-zinc-500 focus:outline-none focus:border-zinc-600 focus:ring-1 focus:ring-red-600/30 transition-colors duration-200';
 
 export default function ContactClient() {
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
@@ -375,7 +375,7 @@ export default function ContactClient() {
                         id="contact-form-submit-btn"
                         type="submit"
                         disabled={formStatus === 'submitting'}
-                        className="w-full flex justify-center items-center gap-2 bg-red-700 text-white text-sm font-medium py-4 rounded-full hover:bg-red-600 hover:scale-[1.02] disabled:opacity-50 disabled:hover:scale-100 transition-all duration-300 mt-2 contact-submit-click"
+                        className="w-full flex justify-center items-center gap-2 bg-red-700 text-white text-sm font-medium py-4 rounded-full hover:bg-red-600 hover:scale-[1.02] disabled:opacity-50 disabled:hover:scale-100 transition-all duration-300 mt-2 contact-submit-click touch-manipulation"
                       >
                         {formStatus === 'submitting' ? (
                           <>
@@ -405,10 +405,14 @@ export default function ContactClient() {
                         </motion.div>
                       )}
 
-                      <p className="text-zinc-600 text-xs text-center mt-4">
-                        By submitting, you agree to our{' '}
+                      <p className="text-zinc-400 text-xs text-center mt-4 leading-relaxed max-w-md mx-auto">
+                        By submitting, you agree to receive email and SMS communications from Medici Social at the contact info provided. Consent is not a condition of purchase. Message/data rates may apply. View our{' '}
                         <Link href="/privacy" className="underline hover:text-red-500 transition-colors duration-200">
                           Privacy Policy
+                        </Link>{' '}
+                        and{' '}
+                        <Link href="/terms" className="underline hover:text-red-500 transition-colors duration-200">
+                          Terms & Conditions
                         </Link>
                         .
                       </p>
