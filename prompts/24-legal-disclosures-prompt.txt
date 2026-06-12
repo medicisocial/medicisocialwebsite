@@ -1,0 +1,8 @@
+Act as a digital compliance lawyer. Scan my layout, footer, and page files to ensure we meet basic legal website requirements.
+
+Please check for these legal elements:
+1. Mandatory Links: Verify that links to a "Privacy Policy" and "Terms of Service" exist in the global footer layout.
+2. Form Consent: If there is a contact form, check if there is a short disclosure or checkbox near the submit button indicating that by submitting, the user agrees to be contacted (crucial for SMS/Email marketing laws).
+3. Cookie Disclosure: If tracking scripts or pixels are active, check if we have a basic cookie notice or privacy disclosure visible to the user.
+
+List any missing compliance pieces and give me the layout updates to add them cleanly.

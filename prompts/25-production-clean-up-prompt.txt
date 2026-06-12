@@ -1,0 +1,8 @@
+Act as a quality assurance code auditor. Scan every file in my project to clean it up for the official public launch.
+
+Please check for these messy code traps:
+1. Placeholder Text: Search for any left-over "Lorem Ipsum" text or template words like "Insert Service Here".
+2. Console Logs: Search for any "console.log" test lines in the code that could slow down the site or expose system details.
+3. Broken Draft Pages: Check if there are any old test routes or draft files inside the folder path that we forgot to delete.
+
+Flag the exact files and lines that contain these issues so I can delete or fix them before going live.

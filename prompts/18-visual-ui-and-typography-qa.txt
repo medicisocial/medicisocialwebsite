@@ -1,0 +1,9 @@
+Act as a meticulous frontend visual designer and QA inspector. Scan my layout and page files to ensure perfect visual symmetry and exact text hierarchy.
+
+Please check for these precise design rules:
+1. One H1 Heading Per Page: Verify that every single page has exactly one <h1> tag for the main title. Change any extra <h1> tags to <h2> or <h3> tags so search engines do not penalize us.
+2. Symmetrical Padding: Check that spacing, margins, and padding are completely symmetrical on both sides of our content blocks. For example, if a section has left padding, it must have the exact same right padding.
+3. Vertical Spacing Harmony: Ensure that the blank space between sections is completely consistent across the whole website. Do not mix tight spaces with massive gaps.
+4. Typography Scaling: Check that font sizes flow naturally from large titles down to small paragraph text without any random size jumps.
+
+Flag any misaligned elements, uneven padding, or heading errors and give me the exact Tailwind fixes.

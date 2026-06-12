@@ -1,0 +1,11 @@
+Act as a Next.js and Vercel optimization expert. Analyze my current codebase to ensure my pages are correctly optimizing for Static Site Generation (SSG). 
+
+Scan my files in the app directory and alert me if any of them are accidentally forcing Next.js to switch to dynamic Server-Side Rendering (SSR) or full Client-Side Rendering (CSR).
+
+Please check for these specific static-breaking triggers:
+1. Top-Level Client Components: Check if main page files (like page.tsx) have the "use client" directive at the very top. If they do, see if we can move interactivity down into smaller, nested components so the main page stays static.
+2. Dynamic Functions: Look for functions like cookies() or headers() inside components that might block static building.
+3. Unwrapped Search Params: Look for the use of searchParams in a page. If it is there, check if it is properly wrapped in a React <Suspense> boundary so the rest of the page can still build statically.
+4. Fetch Cache Settings: Check if any fetch requests are explicitly using options like cache: 'no-store' or revalidate: 0.
+
+List any files that violate these rules and provide the simple fix to restore them to pure, lightning-fast static HTML.

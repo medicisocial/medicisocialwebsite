@@ -1,0 +1,9 @@
+Act as a social media marketing and web preview expert. Scan my layout and page files to ensure social sharing features are ready.
+
+Please check for these social share rules:
+* Check for Open Graph tags in the metadata setup.
+* Ensure there is a specific social share preview image designated for the site.
+* Ensure there is a custom title and short description specifically formatted for platforms like Facebook and X (Twitter).
+* Check that the preview image uses an absolute link path (like https://site.com/image.jpg) instead of a local file path.
+
+List any missing preview elements and show me the simple code to add them.

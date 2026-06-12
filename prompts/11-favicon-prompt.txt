@@ -1,0 +1,8 @@
+Act as a professional branding and UI expert. Scan my public and app folders to ensure all default framework icons have been replaced with custom branding for this business.
+
+Please check for these specific icon files:
+1. Favicon: Check if a custom favicon.ico file exists so the business logo shows up in browser tabs.
+2. Apple Touch Icon: Verify there is a high-resolution icon file for users who save the website to their iPhone home screens.
+3. Web Manifest: Check for a manifest.json or manifest.ts file that defines theme colors and icon paths for mobile devices.
+
+List any default placeholder icons that are still remaining and tell me exactly where to place the new custom logo images.

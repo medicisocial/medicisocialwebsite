@@ -1,0 +1,9 @@
+Act as a responsive web design expert. Scan my Tailwind CSS layout files to ensure the website stretches and shrinks perfectly on every possible screen size, from tiny smartphones to massive ultra-wide desktop monitors.
+
+Please check for these responsive layout rules:
+1. Tailwind Breakpoints: Verify that we use Tailwind's screen size prefixes (like md:, lg:, and xl:) to change layouts gracefully as the screen grows.
+2. Desktop Max-Widths: Ensure main content areas have a maximum width limit (like max-w-6xl or max-w-7xl) and are centered on the screen. This prevents text and images from stretching out layouts awkwardly on huge desktop monitors.
+3. Flexible Layouts: Check that grids and flexbox containers use fractional values or percentages instead of hardcoded pixel widths so elements resize smoothly.
+4. Text Scaling: Ensure font sizes scale down nicely on smaller screens so they do not look comically large or break into weird text wraps.
+
+Identify any layouts that break or look awkward on specific resolutions and provide the exact Tailwind fixes.

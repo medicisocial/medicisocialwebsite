@@ -1,0 +1,8 @@
+Act as a cross-browser QA testing expert. Scan my Tailwind CSS classes and layout components specifically looking for known rendering bugs on iOS Safari and mobile browsers.
+
+Please check for these specific browser traps:
+1. Viewport Height Glitches: Look for "h-screen" classes. On mobile Safari, this often pushes content past the bottom navigation bar. Suggest replacing it with "h-svh" or "h-dvh" (dynamic viewport heights).
+2. Flexbox/Grid Collapsing: Check that flex containers or grid items have explicit scaling rules so they do not squish or collapse on older Safari versions.
+3. Sticky Elements: Verify that any sticky navigation headers use the correct layout constraints so they do not wobble or disappear while scrolling on iOS.
+
+Identify any risky Tailwind configurations and provide the safest cross-browser fallback classes.

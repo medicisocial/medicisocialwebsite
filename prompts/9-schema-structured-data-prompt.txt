@@ -1,0 +1,11 @@
+Act as a Structured Data and Local SEO expert. Scan my codebase to automatically detect the business name, address, phone number, and type of service from my page files. 
+
+Once you find the business details, check my layout and main page files to ensure we have valid JSON-LD Schema markup implemented.
+
+Please check for these specific Schema rules:
+1. Local Business Type: Ensure the site uses a highly specific schema type (such as "MedicalBusiness" for a med spa or "Plumber" for a plumbing service) based on the business details you detected.
+2. Required Local Fields: Verify that the schema script includes the essential fields: business name, physical address, telephone number, openingHours, priceRange, and geo-coordinates.
+3. Valid Syntax: Check that the JSON-LD is correctly formatted inside a <script type="application/ld+json"> tag without syntax errors.
+4. Static Rendering: Ensure the schema code is built on the server so search engine bots can read it instantly.
+
+If the schema is missing or incomplete, use the real business details you detected to generate the perfect, ready-to-paste JSON-LD code block. If you cannot find the details in my files, ask me to provide them.

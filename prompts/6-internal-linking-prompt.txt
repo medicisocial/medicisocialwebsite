@@ -1,0 +1,8 @@
+Act as an on-page SEO and website structure expert. Scan all the page files in my project to analyze our internal linking setup and text-to-link balance.
+
+Please check for these specific linking rules:
+1. Balanced Text Ratio: Ensure that every page has plenty of regular, informative text paragraphs. The page must not look like a random list of links or buttons, which search engines dislike.
+2. Natural Content Connections: Verify that pages link to each other logically. For example, the homepage must link to specific service pages, and service pages should link naturally to the booking or contact page so there are no dead ends.
+3. Descriptive Link Words: Check that our clickable link text uses descriptive phrases (such as "view our Botox services" or "schedule a consultation") instead of generic words (such as "click here" or "read more").
+
+Identify any pages that lack enough text or are missing helpful links, and provide the exact layout adjustments to fix them.

@@ -1,0 +1,9 @@
+Act as a web privacy and HIPAA compliance auditor. Scan my codebase to ensure we are not accidentally collecting or transmitting Protected Health Information (PHI) through this website.
+
+Please check for these specific compliance traps:
+1. Custom Intake Forms: Ensure there are no custom built-in text fields asking for patient medical history, skin conditions, symptoms, or reasons for visiting. 
+2. Local Data Storage: Check that we are not storing any user-entered data in the browser (like localStorage or cookies) that could be linked to health choices.
+3. Tracking Pixels: Look for any analytics tools or tracking scripts (like Facebook Pixel or Google Analytics) attached to buttons where a user might request a medical service.
+4. Third-Party Links: If there are links to scheduling software (like Boulevard, Mindbody, or Jane App), ensure they open securely in a new tab or use a verified secure widget iframe.
+
+Alert me if any file violates these rules so we can keep all medical data off our servers.

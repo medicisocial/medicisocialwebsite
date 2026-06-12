@@ -1,0 +1,33 @@
+Act as an expert web developer and SEO specialist. Review my current project files and code structure against the following SEO checklist. For any items that fail, point out the exact file and give me the simple code fix.
+
+Here is the SEO checklist to enforce:
+
+1. Page Titles and Descriptions
+* Check if every page file has a unique title.
+* Check if every page file has a unique meta description.
+* Ensure titles are under 60 characters and descriptions are under 160 characters.
+
+2. Canonical URLs (Crucial for Vercel)
+* Check if a global canonical URL is set up in the main layout.
+* Ensure every page generates a canonical tag pointing to the main domain. This prevents Vercel preview links from causing duplicate content penalties.
+
+3. Heading Hierarchy
+* Ensure there is exactly one <h1> tag on every page.
+* Check that <h2> and <h3> tags follow a logical order. Do not skip heading levels (for example, do not jump from an <h1> straight to an <h3>).
+
+4. Image Optimization
+* Check all images for descriptive "alt" text attributes.
+* Ensure standard HTML <img> tags are replaced with the framework's optimized image component (like next/image).
+
+5. Links and Navigation
+* Ensure all internal links use the framework's Link component instead of regular HTML anchor tags.
+* Check that all external links opening in a new tab have the safely attributes: rel="noopener noreferrer".
+
+6. Semantic HTML
+* Check that the code uses meaningful layout tags (like <main>, <nav>, <header>, <footer >, and <article>) instead of just using <div> tags for everything.
+
+7. SEO Technical Files
+* Check if a robots.txt file exists in the public or app directory.
+* Check if a sitemap file (like sitemap.xml or sitemap.ts) is present to help search engines find pages.
+
+Scan my code now and list any files that violate these rules, along with the necessary fixes.

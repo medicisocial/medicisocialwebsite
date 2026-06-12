@@ -1,0 +1,7 @@
+Act as a website security and spam prevention expert. Scan my page files for any raw email addresses or phone numbers exposed directly in the code text.
+
+Please check for these spam traps:
+* Plain Text Emails: Check if email addresses are written out normally, which allows automated spam bots to steal them.
+* Code Protection: Suggest simple ways to hide the email text from bots (such as splitting up the text with JavaScript strings) while keeping it completely normal and clickable for real human users.
+
+List any exposed contact details and show me the simple code to protect them from spam scrapers.

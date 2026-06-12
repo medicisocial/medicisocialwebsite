@@ -1,0 +1,9 @@
+Act as an AI Search Optimization Expert. Scan my website files to ensure our data and text are formatted perfectly for AI engines like ChatGPT, Gemini, and Perplexity.
+
+Please check for these AI optimization rules:
+1. Question and Answer Formatting: Check if we have an FAQ section that answers common questions directly using plain language. AI bots love clear question-and-answer pairs.
+2. Fact Density: Ensure our text states clear facts about the business early on the page. Avoid fluff words and state exactly what services are offered, where they are offered, and who performs them.
+3. Structured Lists: Verify that step-by-step processes (like what to expect during a visit) use clean bullet points or numbered lists, which AI engines easily scrape and summarize.
+4. Authority Quotes: Check if we include clear professional quotes or credentials that establish the business as a trusted authority.
+
+Provide the exact text layout updates to make our content highly scannable and easy to cite for AI engines.

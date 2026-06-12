@@ -1,0 +1,8 @@
+Act as a website speed coach. Scan my project files and find anything that could prevent this page from loading instantly for a user.
+
+Please check for these speed factors:
+* Check the main top image (the hero image) on each page. Ensure it has the "priority" attribute so the browser downloads it first.
+* Look at my text styles. Ensure all custom web fonts are set up using the native framework font tool to stop text from jumping or flashing while loading.
+* Check if I am using any oversized files or heavy external code pieces that will hurt my mobile speed score.
+
+Give me the exact code changes needed to get a perfect speed score.

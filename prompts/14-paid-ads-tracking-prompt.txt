@@ -1,0 +1,9 @@
+Act as a paid advertising tracking and web analytics engineer. Scan my root layout and component files to check the implementation of marketing pixels and datasets (such as Google Tag Manager, Google Analytics 4, and Meta Pixel/Datasets).
+
+Please check for these ad tracking rules:
+1. Non-Blocking Performance: Ensure all tracking scripts are loaded using the framework's optimized script component (like next/script) using performance strategies like "lazyOnload" or "afterInteractive". Scripts must not block the initial page load or hurt our speed scores.
+2. Clean Event Triggers: Verify that custom conversion events (like a lead form submission or phone number click) trigger the tracking code cleanly without double-firing or breaking our static SSG build.
+3. Environment Segregation: Check that tracking scripts only fire on the official production domain and are completely turned off during local development and Vercel preview deployments. This keeps messy test data out of the client's real ad accounts.
+4. Consent Mode Compliance: Ensure tracking integrations respect basic privacy settings and consent states before firing cookies or data tokens.
+
+List any misplaced tracking scripts or performance traps and provide the exact framework-optimized setup to fix them.

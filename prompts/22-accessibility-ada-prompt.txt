@@ -1,0 +1,9 @@
+Act as a web accessibility compliance auditor. Scan my component files and Tailwind code.
+
+Please check for these visual and screen-reader rules:
+* Check that all buttons, icons, and image links have an explicit "aria-label" or text so screen readers can read them out loud.
+* Ensure text colors have strong enough visual contrast against background colors.
+* Check that form text boxes are linked to clear labels so users know exactly what to type.
+* Ensure all interactive parts can be selected and used with just a computer keyboard.
+
+List the files that fail these checks and give me the simple HTML updates to make them safe.

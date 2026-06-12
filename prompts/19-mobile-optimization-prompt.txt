@@ -1,0 +1,9 @@
+Act as a mobile user experience and performance coach. Scan my project files and layout files to ensure this website is completely optimized for smartphones and tablets.
+
+Please check for these specific mobile issues:
+1. Touch Target Sizes: Check that all buttons, navigation items, and links have a large enough tap area (at least 48x48 pixels) and enough spacing around them to prevent accidental mis-taps on mobile touchscreens.
+2. Form Input Zooming: Look at form text input fields. Check if any font size is smaller than 16 pixels. If font sizes are smaller than 16px, mobile devices like iPhones will forcefully zoom into the screen when a user clicks the input, which ruins the visual layout.
+3. Side Scrolling Breaks: Search for elements, wide images, or padding styles that could break the page width and cause the website to accidentally scroll horizontally or wobble sideways on a small device.
+4. Mobile Menu Navigation: Ensure desktop navigation menus are fully hidden on small screens and that a clean, collapsible mobile navigation menu (like a hamburger menu) is being used instead.
+
+List any files that violate these guidelines and provide the exact code changes to fix them.

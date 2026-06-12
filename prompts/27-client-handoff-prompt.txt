@@ -1,0 +1,9 @@
+Act as a technical writer and client success manager. Scan my completed project structure and files.
+
+Generate a clean, professional, non-technical "Website Owner Manual" markdown file that I can hand over to my small business client. It must include:
+1. Website Overview: A brief summary of what tech was used (Next.js, Vercel, Tailwind) and why it makes their site fast and secure.
+2. How to Make Updates: Simple instructions on how they can request changes, update text, or change hours (whether through GitHub, editing a file, or contacting me).
+3. Performance Metrics: A note explaining that their site is optimized for Google Maps, mobile devices, and high-speed loading.
+4. Security & Compliance: A section reassuring them that the site has built-in protections for privacy, legal compliance, and secret keys.
+
+Format this beautifully so it looks like a premium, agency-grade deliverable.

@@ -1,0 +1,8 @@
+Act as a digital marketing and web analytics specialist. Scan my codebase to ensure all call-to-actions (CTAs) are optimized for conversion tracking.
+
+Please check for these tracking rules:
+1. Clickable Phone & Email: Ensure every phone number uses the proper "tel:" link format (e.g., href="tel:+11234567890") and every email uses "mailto:" so they instantly launch on mobile devices.
+2. Analytics Event Hooks: Check if our phone buttons, email links, and form submissions have distinct IDs or CSS classes (like class="phone-cta-click") so analytics tools (like Google Tag Manager or Meta Pixel) can easily trigger conversion events on them.
+3. Outbound Map Links: Verify that address links point directly to Google Maps/Apple Maps using valid external URLs so users can get directions instantly.
+
+List any buttons or links that are missing these conversion tracking elements and provide the fix.

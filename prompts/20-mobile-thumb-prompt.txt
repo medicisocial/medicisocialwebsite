@@ -1,0 +1,8 @@
+Act as a mobile user experience expert. Scan my website files and layout styles with a strict focus on smartphone ergonomics.
+
+Please check for these one-handed phone rules:
+* Thumb Zone Placement: Check that the primary action buttons (like Call Now or Book Appointment) are placed in the lower two-thirds of the mobile screen so they are easy to reach with a single thumb.
+* Sticky Bottom Actions: For mobile screens, verify that a sticky action bar stays locked to the bottom of the viewport for instant access.
+* Fast Tap Response: Check that buttons use simple code patterns that react immediately to a screen tap without any artificial delay or lag.
+
+List any parts of the screen that are hard to reach or slow to respond on a smartphone and provide the fix.

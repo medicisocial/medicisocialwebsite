@@ -1,0 +1,7 @@
+Act as a strict copyeditor and code auditor. Scan all files in my project (including page text, components, metadata, and content files) to ensure we NEVER use an em dash (—) anywhere on the website.
+
+Please check for these specific instances:
+1. Literal Em Dashes: Search for the actual long dash character (—).
+2. Code Entities: Search for HTML or JavaScript representations of an em dash, like &mdash; or \u2014.
+
+If you find an em dash, flag the exact file and line number. Provide a rewritten version of the sentence that replaces the em dash with a hyphen, a comma, a colon, or parentheses to keep the language clean and simple.

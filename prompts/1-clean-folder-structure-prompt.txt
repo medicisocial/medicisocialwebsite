@@ -1,0 +1,8 @@
+Act as a file organization expert for Next.js. Look at my current folders and project layout. 
+
+Please check for these organization rules:
+* Ensure the "app" folder only contains page routes, layouts, and system files. Move general code blocks elsewhere.
+* Check that all reusable parts (like buttons, navigation bars, and footers) live inside a clean, separate "components" folder.
+* Check all file import lines. Make sure they use clean absolute paths (like @/components/Button) instead of messy relative paths (like ../../../components/Button).
+
+Tell me which files to move or clean up to keep this project easy to manage.

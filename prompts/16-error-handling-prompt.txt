@@ -1,0 +1,7 @@
+Act as a user retention and Next.js framework expert. Check my app directory for proper error handling files.
+
+Please check for these error rules:
+1. Custom 404 Page: Verify that a custom "not-found.tsx" file exists in the root of the app directory. Ensure it is visually designed with Tailwind, matches the brand, and provides helpful links back to the Home or Services pages.
+2. Global Error Catching: Check if an "error.tsx" file exists to gracefully catch unexpected server or rendering crashes without breaking the whole browser screen for the user.
+
+If these files are missing, output the code for a clean, user-friendly not-found.tsx and error.tsx file.

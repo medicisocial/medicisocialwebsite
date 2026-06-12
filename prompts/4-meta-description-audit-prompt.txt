@@ -1,0 +1,9 @@
+Act as an elite SEO copywriter and snippet optimization expert. Scan the metadata configuration across all pages and dynamic routes in my website project.
+
+Please audit our meta descriptions against these strict search snippet rules:
+1. Hard Character Limits: Ensure every single meta description is strictly between 120 and 155 characters (including spaces). Anything over 155 characters must be rewritten to prevent Google truncation.
+2. Direct Local Hooks: Verify that every description naturally includes the core target service and location within the first 60 characters (e.g., "Premier Botox and dermal fillers in Olathe, KS...").
+3. Active Call-to-Action (CTA): Check that every description ends with a compelling, active hook that drives clicks (such as "Book your luxury consultation today!", "View pricing online!", or "Schedule your transformation.").
+4. Zero Duplication: Ensure that no two pages share the exact same meta description. Every single treatment page must have a completely unique snippet.
+
+Identify any descriptions that are too long, too short, duplicate, or missing a strong call-to-action, and write out the exact optimized snippets to replace them.
