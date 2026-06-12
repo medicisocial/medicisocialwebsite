@@ -90,6 +90,8 @@ const caseStudies = [
     stat1: { value: '295%', label: 'Increase in average watch time' },
     stat2: { value: '92%', label: 'Follower growth in 90 days' },
     img: '/images/plume.jpg',
+    width: 600,
+    height: 600,
   },
   {
     name: 'Arco Fit',
@@ -98,6 +100,8 @@ const caseStudies = [
     stat1: { value: '3.4x', label: 'Increase in average video views' },
     stat2: { value: '58%', label: 'Growth in social-driven sales' },
     img: '/images/arco-gym.webp',
+    width: 382,
+    height: 510,
   },
   {
     name: 'ARA Med Spa',
@@ -106,6 +110,8 @@ const caseStudies = [
     stat1: { value: '176%', label: 'Increase in organic reach' },
     stat2: { value: '64%', label: 'Increase in sign-ups from social' },
     img: '/images/ara-med-spa.webp',
+    width: 1200,
+    height: 1821,
   },
 ];
 
@@ -450,7 +456,14 @@ export default function HomeClient() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.9, ease: [...scrollEase] as [number, number, number, number] }}
                   >
-                    <img src={cs.img} alt={cs.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                    <Image
+                      src={cs.img}
+                      alt={cs.name}
+                      width={cs.width}
+                      height={cs.height}
+                      className="w-full h-full md:h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
                   </motion.div>
                 </div>
               </motion.div>

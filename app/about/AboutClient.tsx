@@ -3,6 +3,7 @@
 import { useEffect } from 'react';
 import Link from 'next/link';
 import { motion, Variants } from 'framer-motion';
+import Image from 'next/image';
 
 /* ── Animation variants (from UI_UX_SPEC.md) ── */
 const heroEase = [0.16, 1, 0.3, 1] as const;
@@ -269,11 +270,13 @@ export default function AboutClient() {
                 className="bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden group cursor-default"
               >
                 {/* Portrait image — editorial 3:4 ratio */}
-                <div className="aspect-[3/4] overflow-hidden">
-                  <img
+                <div className="relative aspect-[3/4] overflow-hidden">
+                  <Image
                     src={t.img}
                     alt={t.name}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 33vw"
                   />
                 </div>
                 {/* Content */}

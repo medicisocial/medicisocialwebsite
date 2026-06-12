@@ -3,6 +3,8 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
+import logoImg from '../../public/images/footer-logo-medici.png';
 
 const navLinks = [
   { label: 'Home', href: '/' },
@@ -77,7 +79,7 @@ export default function Navbar() {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
             >
-              <img src="/images/footer-logo-medici.png" alt="Medici Social" className="h-9 md:h-10 w-auto object-contain -ml-3" />
+              <Image src={logoImg} alt="Medici Social" priority className="h-9 md:h-10 w-auto object-contain -ml-3" />
             </Link>
 
             {/* Right — Nav links + CTA + Hamburger */}

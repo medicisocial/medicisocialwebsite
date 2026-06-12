@@ -1,6 +1,8 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
+import logoImg from '../../public/images/footer-logo-medici.png';
 
 export default function Footer() {
   return (
@@ -14,7 +16,7 @@ export default function Footer() {
               scroll={false}
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             >
-              <img src="/images/footer-logo-medici.png" alt="Medici Social" className="h-9 md:h-10 w-auto object-contain mb-4" />
+              <Image src={logoImg} alt="Medici Social" className="h-9 md:h-10 w-auto object-contain mb-4" />
             </Link>
             <p className="text-zinc-400 text-sm leading-relaxed max-w-xs mb-6">
               A full-service marketing agency specializing in social media, web design, SEO, and AI integrations.

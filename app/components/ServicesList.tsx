@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const services = [
   {
@@ -95,9 +96,11 @@ export default function ServicesList() {
                         opacity: isHovered || isOpen ? 1 : 0,
                       }}
                     >
-                      <img
+                      <Image
                         src={service.img}
-                        alt=""
+                        alt={service.title}
+                        width={80}
+                        height={56}
                         className="w-20 h-14 object-cover rounded-lg"
                       />
                     </div>

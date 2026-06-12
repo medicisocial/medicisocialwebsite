@@ -4,6 +4,9 @@ import AboutClient from './AboutClient';
 export const metadata: Metadata = {
   title: 'About Us',
   description: 'Meet our Houston marketing agency team. We are a collective of strategists and creators driving digital growth. Read our story online!',
+  alternates: {
+    canonical: '/about',
+  },
 };
 
 export default function About() {
