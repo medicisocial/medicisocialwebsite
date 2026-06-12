@@ -25,17 +25,17 @@ export const metadata: Metadata = {
     default: 'Medici Social | Social Media Marketing Agency',
   },
   description:
-    'We are a collective of strategists, editors, and creators turning attention into measurable growth for modern brands. Based in Houston, TX.',
+    'We are a collective of strategists, editors, and creators turning attention into measurable growth for modern brands. Based in Fulshear, TX.',
   keywords: [
     'social media marketing agency',
     'short-form video agency',
-    'content creation Houston',
+    'content creation Fulshear',
     'social media management',
-    'website design Houston',
-    'SEO agency Houston',
+    'website design Fulshear',
+    'SEO agency Fulshear',
     'AI marketing',
     'Medici Social',
-    'Houston marketing agency',
+    'Fulshear marketing agency',
     'brand strategy',
     'TikTok marketing',
     'Instagram marketing',
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Medici Social | Social Media Marketing Agency',
     description:
-      'We are a collective of strategists, editors, and creators turning attention into measurable growth for modern brands. Based in Houston, TX.',
+      'We are a collective of strategists, editors, and creators turning attention into measurable growth for modern brands. Based in Fulshear, TX.',
     url: 'https://www.medicisocial.com',
     siteName: 'Medici Social',
     locale: 'en_US',

@@ -1,28 +1,35 @@
 export default function SchemaOrg() {
   const schema = {
     '@context': 'https://schema.org',
-    '@type': 'Organization',
+    '@type': 'LocalBusiness',
+    '@id': 'https://www.medicisocial.com/#localbusiness',
     name: 'Medici Social',
     url: 'https://www.medicisocial.com',
     logo: 'https://www.medicisocial.com/images/logo.png',
+    image: 'https://www.medicisocial.com/images/logo.png',
     description:
-      'A data-driven social media marketing and short-form video agency based in Houston, TX. We specialize in social media management, content creation, website design, SEO, and AI-powered strategy.',
-    foundingLocation: {
-      '@type': 'Place',
-      name: 'Houston, TX',
-    },
+      'A data-driven social media marketing and short-form video agency based in Fulshear, TX. We specialize in social media management, content creation, website design, SEO, and AI-powered strategy.',
     address: {
       '@type': 'PostalAddress',
-      addressLocality: 'Houston',
+      addressLocality: 'Fulshear',
       addressRegion: 'TX',
       addressCountry: 'US',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 29.6900,
+      longitude: -95.8997,
+    },
+    foundingLocation: {
+      '@type': 'Place',
+      name: 'Fulshear, TX',
     },
     areaServed: {
       '@type': 'GeoCircle',
       geoMidpoint: {
         '@type': 'GeoCoordinates',
-        latitude: 29.7604,
-        longitude: -95.3698,
+        latitude: 29.6900,
+        longitude: -95.8997,
       },
       geoRadius: '50000',
     },
