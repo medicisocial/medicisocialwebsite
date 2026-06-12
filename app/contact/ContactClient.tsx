@@ -44,6 +44,7 @@ const inputClasses =
 export default function ContactClient() {
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const [formLoadTime, setFormLoadTime] = useState<number>(0);
+  const [selectedService, setSelectedService] = useState<string>('');
 
   useEffect(() => {
     setFormLoadTime(Date.now());
@@ -175,7 +176,10 @@ export default function ContactClient() {
                     </p>
                     
                     <button
-                      onClick={() => setFormStatus('idle')}
+                      onClick={() => {
+                        setFormStatus('idle');
+                        setSelectedService('');
+                      }}
                       className="inline-flex items-center gap-2 text-zinc-400 hover:text-white text-xs uppercase tracking-wider font-semibold transition-colors duration-200"
                     >
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
@@ -206,6 +210,7 @@ export default function ContactClient() {
                           // Simulate submission delay and silently succeed
                           setTimeout(() => {
                             form.reset();
+                            setSelectedService('');
                             setFormStatus('success');
                           }, 1000);
                           return;
@@ -223,6 +228,7 @@ export default function ContactClient() {
                               (window as any).fbq('track', 'Lead');
                             }
                             form.reset();
+                            setSelectedService('');
                           } else {
                             setFormStatus('error');
                           }
@@ -253,6 +259,7 @@ export default function ContactClient() {
                             type="text"
                             placeholder="Name"
                             required
+                            autoComplete="name"
                             className={inputClasses}
                           />
                         </div>
@@ -266,6 +273,7 @@ export default function ContactClient() {
                             type="email"
                             placeholder="Email"
                             required
+                            autoComplete="email"
                             className={inputClasses}
                           />
                         </div>
@@ -283,6 +291,7 @@ export default function ContactClient() {
                             type="text"
                             placeholder="Company Name"
                             required
+                            autoComplete="organization"
                             className={inputClasses}
                           />
                         </div>
@@ -296,6 +305,7 @@ export default function ContactClient() {
                             type="tel"
                             placeholder="Phone Number"
                             required
+                            autoComplete="tel"
                             className={inputClasses}
                           />
                         </div>
@@ -309,14 +319,18 @@ export default function ContactClient() {
                         <select
                           id="contact-service"
                           name="service"
-                          className={`${inputClasses} appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23a1a1aa%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%25.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:0.65rem_auto] bg-[right_1rem_center] bg-no-repeat pr-10`}
-                          defaultValue=""
+                          className={`${inputClasses} appearance-none bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22%23a1a1aa%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20d%3D%22M5.22%208.22a.75%20.75%200%200%201%201.06%200L10%2011.94l3.72-3.72a.75%20.75%200%201%201%201.06%201.06l-4.25%204.25a.75%20.75%200%200%201-1.06%200L5.22%209.28a.75%20.75%200%200%201%200-1.06z%22%20clip-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E')] bg-[length:1.1rem_auto] bg-[right_1rem_center] bg-no-repeat pr-10 ${
+                            selectedService === '' ? '!text-zinc-500' : 'text-white'
+                          }`}
+                          value={selectedService}
+                          onChange={(e) => setSelectedService(e.target.value)}
                         >
                           <option value="" disabled className="text-zinc-500 bg-zinc-950">Select a service...</option>
                           <option value="social-media" className="text-white bg-zinc-950">Social Media Management</option>
                           <option value="content-creation" className="text-white bg-zinc-950">Content Creation & Branding</option>
                           <option value="paid-ads" className="text-white bg-zinc-950">Paid Advertising</option>
                           <option value="web-development" className="text-white bg-zinc-950">Web Design & Development</option>
+                          <option value="multiple" className="text-white bg-zinc-950">Multiple Services / All of the Above</option>
                           <option value="other" className="text-white bg-zinc-950">Other / Strategy Session</option>
                         </select>
                       </div>
@@ -363,7 +377,17 @@ export default function ContactClient() {
                         disabled={formStatus === 'submitting'}
                         className="w-full flex justify-center items-center gap-2 bg-red-700 text-white text-sm font-medium py-4 rounded-full hover:bg-red-600 hover:scale-[1.02] disabled:opacity-50 disabled:hover:scale-100 transition-all duration-300 mt-2 contact-submit-click"
                       >
-                        {formStatus === 'submitting' ? 'Sending...' : 'Send Message'}
+                        {formStatus === 'submitting' ? (
+                          <>
+                            <svg className="animate-spin h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
+                              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                            </svg>
+                            Sending...
+                          </>
+                        ) : (
+                          'Send Message'
+                        )}
                       </button>
 
                       {formStatus === 'error' && (
