@@ -112,7 +112,9 @@ export default function WorkClient() {
                   src={project.img}
                   alt={project.name}
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  className={`object-cover transition-transform duration-700 group-hover:scale-105 ${
+                    project.name === 'ARA Med Spa' ? 'object-[center_20%]' : ''
+                  }`}
                   sizes="(max-width: 768px) 100vw, 1200px"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />

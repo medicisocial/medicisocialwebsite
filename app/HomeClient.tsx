@@ -487,7 +487,9 @@ export default function HomeClient() {
                           alt={cs.name}
                           width={cs.width}
                           height={cs.height}
-                          className="w-full h-full md:h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+                          className={`w-full h-full md:h-auto object-cover transition-transform duration-500 group-hover:scale-105 ${
+                            cs.name === 'ARA Med Spa' ? 'object-[center_20%]' : ''
+                          }`}
                           sizes="(max-width: 768px) 100vw, 50vw"
                         />
                       </motion.div>

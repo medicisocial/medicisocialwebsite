@@ -173,10 +173,14 @@ export default function BookACallClient() {
             Prefer to reach out directly?{' '}
             <a
               id="email-cta-book-a-call"
-              href="mailto:info@medicisocial.com"
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.href = 'mailto:' + 'info' + '@' + 'medicisocial.com';
+              }}
               className="text-zinc-400 hover:text-red-500 transition-colors duration-200 underline underline-offset-4 email-cta-click mailto-link"
             >
-              info@medicisocial.com
+              info&#64;medicisocial.com
             </a>
           </motion.p>
 
