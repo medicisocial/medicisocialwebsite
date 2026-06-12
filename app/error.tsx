@@ -1,9 +1,20 @@
 'use client';
 
 import { useEffect } from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 
-const scrollEase = [0.21, 0.47, 0.32, 0.98] as const;
+const heroEase = [0.16, 1, 0.3, 1] as const;
+
+const staggerContainer = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.1 } },
+};
+
+const staggerItem = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: heroEase } },
+};
 
 export default function Error({
   error,
@@ -18,29 +29,64 @@ export default function Error({
   }, [error]);
 
   return (
-    <div className="min-h-[80vh] flex flex-col items-center justify-center text-center px-4">
+    <div className="relative min-h-[85vh] overflow-hidden flex flex-col items-center justify-center text-center px-4 py-20 bg-black">
+      {/* Background crimson radial glow */}
+      <div 
+        className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(129,1,0,0.12)_0%,transparent_60%)] pointer-events-none" 
+        aria-hidden="true"
+      />
+
       <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: [...scrollEase] as [number, number, number, number] }}
+        variants={staggerContainer}
+        initial="hidden"
+        animate="visible"
+        className="relative z-10 max-w-md w-full"
       >
+        {/* Animated Warning Circle */}
+        <motion.div
+          variants={staggerItem}
+          className="w-20 h-20 bg-red-950/40 border border-red-800/40 rounded-full flex items-center justify-center mx-auto mb-6 text-red-500 shadow-lg shadow-red-950/20"
+        >
+          <svg className="w-10 h-10 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.8}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.008v.008H12v-.008z" />
+          </svg>
+        </motion.div>
+
         {/* Heading */}
-        <h1 className="text-4xl md:text-5xl text-white font-medium mt-8">
+        <motion.h1 
+          variants={staggerItem}
+          className="text-3xl md:text-4xl font-serif text-white tracking-tight"
+        >
           Something Went Wrong.
-        </h1>
+        </motion.h1>
 
         {/* Subtitle */}
-        <p className="text-zinc-400 mt-4 max-w-md mx-auto">
-          An unexpected error occurred. Our team has been notified.
-        </p>
-
-        {/* Retry CTA */}
-        <button
-          onClick={reset}
-          className="mt-10 inline-flex items-center justify-center px-8 py-4 bg-red-700 text-white rounded-full hover:bg-red-600 hover:scale-[1.02] transition-all duration-300 font-medium"
+        <motion.p 
+          variants={staggerItem}
+          className="text-zinc-400 mt-3 max-w-sm mx-auto text-sm leading-relaxed"
         >
-          Try Again →
-        </button>
+          An unexpected server or rendering error occurred. Our technical team has been notified.
+        </motion.p>
+
+        {/* Action CTAs */}
+        <motion.div 
+          variants={staggerItem}
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-10 w-full"
+        >
+          <button
+            onClick={reset}
+            className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 bg-red-700 hover:bg-red-600 text-white rounded-full hover:scale-[1.02] transition-all duration-300 text-sm font-medium cursor-pointer"
+          >
+            Try Again
+          </button>
+          
+          <Link
+            href="/"
+            className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 border border-zinc-800 hover:border-zinc-700 hover:bg-zinc-900/40 text-white rounded-full hover:scale-[1.02] transition-all duration-300 text-sm font-medium cursor-pointer"
+          >
+            Return Home
+          </Link>
+        </motion.div>
       </motion.div>
     </div>
   );
