@@ -71,7 +71,7 @@ export default function TestimonialCarousel() {
                 </blockquote>
                 <div className="mt-8">
                   <span className="text-white font-semibold text-sm">{t.name}</span>
-                  <span className="text-red-600 text-sm ml-2">&mdash; {t.role}</span>
+                  <span className="text-red-600 text-sm ml-2">- {t.role}</span>
                 </div>
               </motion.div>
             </AnimatePresence>
