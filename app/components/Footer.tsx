@@ -32,7 +32,7 @@ export default function Footer() {
               <Link
                 id="footer-send-inquiry"
                 href="/contact"
-                className="inline-flex items-center justify-center border border-zinc-700 text-zinc-300 text-sm font-medium px-6 py-2.5 rounded-full hover:bg-zinc-800 hover:text-white transition-colors contact-cta-click"
+                className="inline-flex items-center justify-center bg-white text-black border border-white text-sm font-medium px-6 py-2.5 rounded-full hover:bg-zinc-200 transition-colors contact-cta-click"
               >
                 Send an Inquiry
               </Link>
