@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence, Variants } from 'framer-motion';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import FaqAccordion from './components/FaqAccordion';
 import PricingPlans from './components/PricingPlans';
 
@@ -117,6 +117,38 @@ const caseStudies = [
 
 export default function HomeClient() {
   const [wordIndex, setWordIndex] = useState(0);
+  const heroVideoRef = useRef<HTMLVideoElement>(null);
+  const [heroVideoPlaying, setHeroVideoPlaying] = useState(false);
+
+  useEffect(() => {
+    const video = heroVideoRef.current;
+    if (!video) return;
+
+    const handlePlaying = () => setHeroVideoPlaying(true);
+    const handlePaused = () => setHeroVideoPlaying(false);
+
+    video.addEventListener('playing', handlePlaying);
+    video.addEventListener('play', handlePlaying);
+    video.addEventListener('pause', handlePaused);
+
+    // Initial check to play programmatically (handling low power mode / autoplay bypass)
+    const playPromise = video.play();
+    if (playPromise !== undefined) {
+      playPromise
+        .then(() => {
+          setHeroVideoPlaying(true);
+        })
+        .catch(() => {
+          setHeroVideoPlaying(false);
+        });
+    }
+
+    return () => {
+      video.removeEventListener('playing', handlePlaying);
+      video.removeEventListener('play', handlePlaying);
+      video.removeEventListener('pause', handlePaused);
+    };
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -220,8 +252,21 @@ export default function HomeClient() {
             <motion.div variants={staggerItem} className="relative flex justify-center md:justify-end">
               <div className="relative w-[280px] md:w-[380px] lg:w-[420px]">
                 {/* Main image */}
-                <div className="rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl shadow-black/50 border border-white/5">
+                <div
+                  className="rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl shadow-black/50 border border-white/5 relative cursor-pointer group"
+                  onClick={() => {
+                    const video = heroVideoRef.current;
+                    if (!video) return;
+                    if (video.paused) {
+                      video.play().then(() => setHeroVideoPlaying(true)).catch(() => {});
+                    } else {
+                      video.pause();
+                      setHeroVideoPlaying(false);
+                    }
+                  }}
+                >
                   <video
+                    ref={heroVideoRef}
                     src="/videos/Website Hd2.mp4"
                     // @ts-expect-error: fetchPriority is a valid HTML attribute but not yet in React's VideoHTMLAttributes types
                     fetchPriority="high"
@@ -234,6 +279,20 @@ export default function HomeClient() {
                     poster="/images/hero-poster.webp"
                     className="w-full aspect-[9/16] object-cover pointer-events-none"
                   />
+                  {!heroVideoPlaying && (
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/30 backdrop-blur-[2px] transition-all duration-300">
+                      <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white shadow-lg transform transition-all duration-300 group-hover:scale-110 active:scale-95">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          className="w-8 h-8 translate-x-[2px]"
+                        >
+                          <path fillRule="evenodd" d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z" clipRule="evenodd" />
+                        </svg>
+                      </div>
+                    </div>
+                  )}
                 </div>
 
                 {/* Floating badges — top */}
