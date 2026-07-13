@@ -85,7 +85,7 @@ export default function TermsClient() {
             <div>
               <h2 className="text-xl md:text-2xl font-bold text-white mb-3">5. Governing Law</h2>
               <p>
-                These Terms & Conditions are governed by and construed in accordance with the laws of the State of Texas, without regard to its conflict of law principles. Any legal action arising from these terms shall be filed in the courts of Fulshear, Fort Bend County, Texas.
+                These Terms & Conditions are governed by and construed in accordance with the laws of the State of Texas, without regard to its conflict of law principles. Any legal action arising from these terms shall be filed in the courts of Houston, Harris County, Texas.
               </p>
             </div>
 

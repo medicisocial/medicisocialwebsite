@@ -346,8 +346,8 @@ export default function ServicesClient() {
                 ),
               },
               {
-                title: 'Fulshear Roots',
-                desc: 'We understand Fulshear\'s market, its culture, and its people. Local insight paired with national-caliber execution.',
+                title: 'Houston Roots',
+                desc: 'We understand Houston\'s market, its culture, and its people. Local insight paired with national-caliber execution.',
                 icon: (
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />

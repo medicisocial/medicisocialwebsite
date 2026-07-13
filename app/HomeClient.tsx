@@ -223,7 +223,7 @@ export default function HomeClient() {
                 variants={staggerItem}
                 className="text-zinc-400 text-lg mt-6 max-w-none md:max-w-md leading-relaxed mx-auto md:mx-0"
               >
-                Medici Social is a full-service digital marketing agency based in Fulshear, TX, specializing in social media management, content creation, website design, SEO, and AI workflow integrations for modern brands.
+                Medici Social is a full-service digital marketing agency based in Houston, TX, specializing in social media management, content creation, website design, SEO, and AI workflow integrations for modern brands.
               </motion.p>
 
               {/* CTAs */}

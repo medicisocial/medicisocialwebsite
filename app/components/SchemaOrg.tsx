@@ -8,28 +8,28 @@ export default function SchemaOrg() {
     logo: 'https://www.medicisocial.com/images/logo.png',
     image: 'https://www.medicisocial.com/images/logo.png',
     description:
-      'A data-driven social media marketing and short-form video agency based in Fulshear, TX. We specialize in social media management, content creation, website design, SEO, and AI-powered strategy.',
+      'A data-driven digital marketing agency based in Houston, TX. We specialize in social media management, content creation, website design, SEO, and AI-powered strategy.',
     address: {
       '@type': 'PostalAddress',
-      addressLocality: 'Fulshear',
+      addressLocality: 'Houston',
       addressRegion: 'TX',
       addressCountry: 'US',
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: 29.6900,
-      longitude: -95.8997,
+      latitude: 29.7604,
+      longitude: -95.3698,
     },
     foundingLocation: {
       '@type': 'Place',
-      name: 'Fulshear, TX',
+      name: 'Houston, TX',
     },
     areaServed: {
       '@type': 'GeoCircle',
       geoMidpoint: {
         '@type': 'GeoCoordinates',
-        latitude: 29.6900,
-        longitude: -95.8997,
+        latitude: 29.7604,
+        longitude: -95.3698,
       },
       geoRadius: '50000',
     },
