@@ -35,7 +35,7 @@ The site structure is divided into distinct, responsive pages matching your mark
 Search Engine Optimization (SEO) is built directly into every page layout:
 
 *   **Semantic HTML Tags:** Every page is audited to contain exactly one primary `<h1>` heading (for optimal indexing) and logical sub-heading hierarchies (`<h2>`, `<h3>`).
-*   **Local SEO & Geo-Targeting:** Symmetrical page descriptions target Fulshear, Texas, and the Houston metro market to capture local search intent for digital marketing, web design, and SEO services.
+*   **Local SEO & Geo-Targeting:** Symmetrical page descriptions target Houston, Texas to capture local search intent for digital marketing, web design, and SEO services.
 *   **Structured Schema Data (`JSON-LD`):** Implements automated Schema.org configurations (via [SchemaOrg.tsx](file:///d:/websites/medici-new/medicisocialwebsite/app/components/SchemaOrg.tsx)). This injects metadata about your marketing agency, physical location, opening hours, contact details, and social links directly into page headers for search engine crawlers.
 *   **OpenGraph & Twitter Cards:** Complete metadata configurations for social platforms (such as Facebook, Instagram, LinkedIn, and Twitter) are set up. When links are shared, they display your custom brand image (`og-image.webp`), descriptions, and titles.
 *   **Favicons & Apple Icons:** Implements Next.js dynamic icon handling, delivering high-resolution `favicon.ico`, `icon.tsx` (PNG), and `apple-icon.tsx` formats for bookmarks and mobile home screens.
